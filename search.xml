@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[前端Web开发资源整理]]></title>
+    <url>%2F2019%2F07%2F04%2F%E5%89%8D%E7%AB%AFWeb%E5%BC%80%E5%8F%91%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86%2F</url>
+    <content type="text"><![CDATA[1）想开发项目，哪里找教程？ 2）关于前端的有趣网站 一、前端项目哪里找？ 前端的入门教程网上很多，只要你搜索呼啦啦就出来了，因此啊，就不整理了。主要整理一下，哪里可以找到前端项目，就是有源代码的，可以拿来学习或者拿来用的。 没有详细的教程，但可以找到项目并查看源代码和效果图：1、CodePen 网站里有很多很酷的特效，而且看到它们的源代码，也可以看到效果图。 其实类似的网站有很多，就不一一介绍了： [RunJS](https://link.zhihu.com/?target=http%3A//runjs.cn/square) [CSSdeck](https://link.zhihu.com/?target=http%3A//cssdeck.com/) 2、 [CodePlayer](https://link.zhihu.com/?target=http%3A//thecodeplayer.com/) 网站里有各种项目效果，选择自己想学的，同样可以看到源代码和效果图，和codepen不同的是你可以看到作者是怎样把代码打出来的。 3、html5tricks 网站里有很多前端实现的功能，可以在线查看效果，也可以下载源码的。 有详细的教程，而且步骤详细，教你一步步开发出项目：4、phodal/ideabook 一个练手项目集，有很多实战项目，有步骤、效果图，同样可以看到源代码啊。 5、实验楼-WEB网站里有很多前端项目教程，可以跟着教程一步步在环境中实现，并查看效果图，同样可以下载源代码，非常适合项目实战学习。 二、前端有趣的网站： 1、JS1k大名鼎鼎的js1K，1K字节以内的Javascript代码，实现一个酷炫的动画、特效、小游戏之类的。官网从2010年开始征集参赛作品，现在已经办了７年了，还在办。 2、Can I useCAN I USE，相信每个前端同学都不陌生，查询浏览器兼容性的利器。 3、JSHint一个在线JS检测工具，可以检测JavaScript代码中的错误和潜在问题。 4、aaencode将JS代码转换成常用的网络表情，例如“(ﾟΘﾟ)”。转换的代码并不复杂，可以在源代码里看到。 类似的还有： jsobfuscate一个在线混淆工具，通过先进的算法，来混淆你的JavaScript代码，使其不可读。该工具还可以减小文件的大小，以便快速加载。 5、Best CSS Button Generator网站主要提供各种按钮的CSS代码，你可以从预设的按钮中选择并使用模板用于自己的设计，还可以查看源代码，非常适合学习。 还有一个类似的： Enjoy CSS 网站是一个完整的代码生成器，可以自定义输入域或CSS3按钮，同样可以查看源代码，适合学习。 6、CSS属性指引 一份清单，按字母表顺序列出了每个CSS属性。 7、frontendrescue 里面分享了网络上关于前端的各种资源、大牛等信息，总之很多资源就对了。]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>web前端资源</tag>
+      </tags>
+  </entry>
+</search>
