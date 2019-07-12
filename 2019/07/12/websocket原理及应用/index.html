@@ -117,14 +117,14 @@
 <meta property="og:site_name" content="jacob的个人博客">
 <meta property="og:description" content="websocket深入理解1.websocket原理websocket原理在之前的博客中生动形象的描述过了,这里大概介绍一下 百度对于websocket的解释是:WebSocket是一种在单个TCP连接上进行全双工通信的协议 也就是说websocket是基于TCP协议可以进行双向通信的一个工具 并且websocket在建立服务器和客户端直接的连接的时候只需要完成一次握手,即可实现双向通信,不像发送">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.loli.net/2019/07/12/5d27e46f3ea8d74481.png">
-<meta property="og:image" content="https://i.loli.net/2019/07/12/5d27e92b2ba5d86567.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/07/12/5d281ffb4bd2587282.jpg">
-<meta property="og:updated_time" content="2019-07-12T05:58:08.703Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c596f419ly1g4x6temmtej20ib01ddfo.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c596f419ly1g4x6txgc9ej20xw0dmgme.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c596f419ly1g4x6ubiwbkj209k09kmx4.jpg">
+<meta property="og:updated_time" content="2019-07-12T09:34:31.157Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="websocket原理及应用">
 <meta name="twitter:description" content="websocket深入理解1.websocket原理websocket原理在之前的博客中生动形象的描述过了,这里大概介绍一下 百度对于websocket的解释是:WebSocket是一种在单个TCP连接上进行全双工通信的协议 也就是说websocket是基于TCP协议可以进行双向通信的一个工具 并且websocket在建立服务器和客户端直接的连接的时候只需要完成一次握手,即可实现双向通信,不像发送">
-<meta name="twitter:image" content="https://i.loli.net/2019/07/12/5d27e46f3ea8d74481.png">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/c596f419ly1g4x6temmtej20ib01ddfo.jpg">
 
 
 
@@ -445,7 +445,7 @@
                 
               
 
-              <time title="创建时间：2019-07-12 13:57:00 / 修改时间：13:58:08" itemprop="dateCreated datePublished" datetime="2019-07-12T13:57:00+08:00">2019-07-12</time>
+              <time title="创建时间：2019-07-12 13:57:00 / 修改时间：17:34:31" itemprop="dateCreated datePublished" datetime="2019-07-12T13:57:00+08:00">2019-07-12</time>
             </span>
           
 
@@ -501,7 +501,7 @@
 <p>并且websocket在建立服务器和客户端直接的连接的时候只需要完成一次握手,即可实现双向通信,不像发送ajax协议需要实现三次握手四次挥手,并且websocket的实时性,和控制开销,更好的连接状态的保持都是优于ajax</p>
 <p>websocket的诞生是人们为了解决实时推送技术,因为之前全是使用的ajax轮询,也就是使用ajax技术在特定的时间内发送http请求,然后服务器返回数据给客户端的浏览器,这样的效率其实很慢,因为ajax发送出去的http请求可能含有较长的头部,然而真正有效的数据可能仅仅是后面那一部分,所以浪费了服务器带宽,而且比较新一点的技术做轮询的是Comet,这种技术实现了双向通信,但是依然是含有较长的头部,浪费带宽</p>
 <h4 id="2-websocketAPI"><a href="#2-websocketAPI" class="headerlink" title="2.websocketAPI"></a>2.websocketAPI</h4><h5 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h5><p>补充一点,websocket使用的是http的101状态码建立连接,如下图:</p>
-<p><img src="https://i.loli.net/2019/07/12/5d27e46f3ea8d74481.png" alt="_blank"></p>
+<p><img src="http://ww1.sinaimg.cn/large/c596f419ly1g4x6temmtej20ib01ddfo.jpg" alt="_blank"></p>
 <p>再补充一点,部分浏览器可能不支持websocket接口,你可以在浏览器中尝试实例,目前现代主流浏览器都支持websocket: Chrome, Mozilla, Opera 和 Safari</p>
 <h5 id="API"><a href="#API" class="headerlink" title="API"></a>API</h5><h6 id="1-创建一个websocket实例"><a href="#1-创建一个websocket实例" class="headerlink" title="1.创建一个websocket实例"></a>1.创建一个websocket实例</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 打开一个 web socket</span></span><br><span class="line"><span class="keyword">var</span> ws = <span class="keyword">new</span> WebSocket(<span class="string">"ws://后端提供的websocket地址"</span>);</span><br></pre></td></tr></table></figure>
 
@@ -518,7 +518,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ws.onclose = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">   <span class="comment">// 关闭 websocket</span></span><br><span class="line">   alert(<span class="string">"连接已关闭..."</span>); </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <h6 id="5-自测浏览器是否支持websocket"><a href="#5-自测浏览器是否支持websocket" class="headerlink" title="5.自测浏览器是否支持websocket"></a>5.自测浏览器是否支持websocket</h6><p>这个应该在开始说的,一般现代浏览器都支持websocket,在MDN上面也有兼容图,我就直接贴在这里了</p>
-<p><img src="https://i.loli.net/2019/07/12/5d27e92b2ba5d86567.jpg" alt="_blank"></p>
+<p><img src="http://ww1.sinaimg.cn/large/c596f419ly1g4x6txgc9ej20xw0dmgme.jpg" alt="_blank"></p>
 <p>当然你也可以用代码的形式来检验你的浏览器是否支持websocket</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="string">"WebSocket"</span> <span class="keyword">in</span> <span class="built_in">window</span>)</span><br><span class="line">         &#123;</span><br><span class="line">            alert(<span class="string">"您的浏览器支持 WebSocket!"</span>);</span><br><span class="line">         &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">             alert(<span class="string">"您的浏览器不支持 WebSocket!"</span>)</span><br><span class="line">         &#125;</span><br></pre></td></tr></table></figure>
 
@@ -553,7 +553,7 @@
 
 <p>这样,封装的一个websocket的方法就完成了,确保了数据传输的安全性和稳定性,虽然官方文档介绍websocket很粗略,但是数据传输确实需要考虑到很多方面</p>
 <p>欢迎关注我的微信公众号一起学习前端知识</p>
-<p><img src="https://i.loli.net/2019/07/12/5d281ffb4bd2587282.jpg" alt="公众号"></p>
+<p><img src="http://ww1.sinaimg.cn/large/c596f419ly1g4x6ubiwbkj209k09kmx4.jpg" alt="公众号"></p>
 <h4 id="5-参考文档"><a href="#5-参考文档" class="headerlink" title="5.参考文档"></a>5.参考文档</h4><ul>
 <li><p><a href="https://www.runoob.com/html/html5-websocket.html" target="_blank" rel="noopener">HTML5websocket|菜鸟教程</a></p>
 </li>
