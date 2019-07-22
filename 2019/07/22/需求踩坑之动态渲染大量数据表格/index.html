@@ -109,33 +109,23 @@
 
 
 
-  <meta name="description" content="1）想开发项目，哪里找教程？ 2）关于前端的有趣网站  一、前端项目哪里找？  前端的入门教程网上很多，只要你搜索呼啦啦就出来了，因此啊，就不整理了。主要整理一下，哪里可以找到前端项目，就是有源代码的，可以拿来学习或者拿来用的。 没有详细的教程，但可以找到项目并查看源代码和效果图：1、CodePen 网站里有很多很酷的特效，而且看到它们的源代码，也可以看到效果图。 其实类似的网站有很多，就不一一介">
-<meta name="keywords" content="web前端资源">
+  <meta name="description" content="需求踩坑之动态获取数据表格1.需求最近拿到了这样一个需求 要求是这样的: 1.渲染一个表格,要求表头为1-30的数字排序 2.获取后台传过来的一个长度不固定的字符串 3.将这个字符串2个绑定为一小组,分别填入到这个表格的tbody中 4.当填入的数据为30个时,即要换行在下一行展示 例如: 效果图:  后台接受的数据:  2.实施一开始使用的element-ui 12345678910111213">
+<meta name="keywords" content="需求">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端Web开发资源整理">
-<meta property="og:url" content="http://abc.zhaoloveping.top/2019/07/04/前端Web开发资源整理/index.html">
+<meta property="og:title" content="需求踩坑之动态渲染大量数据表格">
+<meta property="og:url" content="http://abc.zhaoloveping.top/2019/07/22/需求踩坑之动态渲染大量数据表格/index.html">
 <meta property="og:site_name" content="jacob的个人博客">
-<meta property="og:description" content="1）想开发项目，哪里找教程？ 2）关于前端的有趣网站  一、前端项目哪里找？  前端的入门教程网上很多，只要你搜索呼啦啦就出来了，因此啊，就不整理了。主要整理一下，哪里可以找到前端项目，就是有源代码的，可以拿来学习或者拿来用的。 没有详细的教程，但可以找到项目并查看源代码和效果图：1、CodePen 网站里有很多很酷的特效，而且看到它们的源代码，也可以看到效果图。 其实类似的网站有很多，就不一一介">
+<meta property="og:description" content="需求踩坑之动态获取数据表格1.需求最近拿到了这样一个需求 要求是这样的: 1.渲染一个表格,要求表头为1-30的数字排序 2.获取后台传过来的一个长度不固定的字符串 3.将这个字符串2个绑定为一小组,分别填入到这个表格的tbody中 4.当填入的数据为30个时,即要换行在下一行展示 例如: 效果图:  后台接受的数据:  2.实施一开始使用的element-ui 12345678910111213">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-0738b819523d78508ec1aedef74c9788_hd.png">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-eac21e2b09cc78ec2a85e03d5d08b479_hd.png">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-6458e2ebef631461ec53c22d7445dcbb_hd.png">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-958230ef01e5da535fd4c422e98d7a54_hd.png">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-a3100fbbb4c3c8364f3394893c2f5cbf_hd.png">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-6973cd4efe7e9e43faa0a62754f4696d_hd.png">
-<meta property="og:image" content="https://pic3.zhimg.com/80/v2-9a8e98db47a309980e68bb69673fca4a_hd.png">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-ed0f076adbad1a8adf5461d00ac41b3b_hd.png">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-004af7196ee38380cd4da9bcb39a7adb_hd.png">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-fac2f73d6aba751ce4dad9f0899067e9_hd.png">
-<meta property="og:image" content="https://pic3.zhimg.com/80/v2-0d7dd74ac4cc5a8c1c7b255314e5caa6_hd.png">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-fee0381436d015f1723130f3e3406fef_hd.png">
-<meta property="og:image" content="https://pic3.zhimg.com/80/v2-cb485f0f0334ef004496a2aef996bcee_hd.png">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-f1cf27510385bf12a341c76340f19958_hd.png">
-<meta property="og:updated_time" content="2019-07-04T08:43:33.784Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c596f419ly1g58ew7kszmj21200c93z0.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c596f419ly1g58ewyg4acj20ez038wei.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c596f419ly1g58f1hgikgj20jg0jxq3i.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c596f419ly1g58fctt4qpj20ff06xjrp.jpg">
+<meta property="og:updated_time" content="2019-07-22T03:01:35.320Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端Web开发资源整理">
-<meta name="twitter:description" content="1）想开发项目，哪里找教程？ 2）关于前端的有趣网站  一、前端项目哪里找？  前端的入门教程网上很多，只要你搜索呼啦啦就出来了，因此啊，就不整理了。主要整理一下，哪里可以找到前端项目，就是有源代码的，可以拿来学习或者拿来用的。 没有详细的教程，但可以找到项目并查看源代码和效果图：1、CodePen 网站里有很多很酷的特效，而且看到它们的源代码，也可以看到效果图。 其实类似的网站有很多，就不一一介">
-<meta name="twitter:image" content="https://pic1.zhimg.com/80/v2-0738b819523d78508ec1aedef74c9788_hd.png">
+<meta name="twitter:title" content="需求踩坑之动态渲染大量数据表格">
+<meta name="twitter:description" content="需求踩坑之动态获取数据表格1.需求最近拿到了这样一个需求 要求是这样的: 1.渲染一个表格,要求表头为1-30的数字排序 2.获取后台传过来的一个长度不固定的字符串 3.将这个字符串2个绑定为一小组,分别填入到这个表格的tbody中 4.当填入的数据为30个时,即要换行在下一行展示 例如: 效果图:  后台接受的数据:  2.实施一开始使用的element-ui 12345678910111213">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/c596f419ly1g58ew7kszmj21200c93z0.jpg">
 
 
 
@@ -143,7 +133,7 @@
 
   
   
-  <link rel="canonical" href="http://abc.zhaoloveping.top/2019/07/04/前端Web开发资源整理/">
+  <link rel="canonical" href="http://abc.zhaoloveping.top/2019/07/22/需求踩坑之动态渲染大量数据表格/">
 
 
 
@@ -153,7 +143,7 @@
   };
 </script>
 
-  <title>前端Web开发资源整理 | jacob的个人博客</title>
+  <title>需求踩坑之动态渲染大量数据表格 | jacob的个人博客</title>
   
 
 
@@ -413,7 +403,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://abc.zhaoloveping.top/2019/07/04/前端Web开发资源整理/">
+    <link itemprop="mainEntityOfPage" href="http://abc.zhaoloveping.top/2019/07/22/需求踩坑之动态渲染大量数据表格/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="jacob">
@@ -430,7 +420,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">前端Web开发资源整理
+          <h1 class="post-title" itemprop="name headline">需求踩坑之动态渲染大量数据表格
 
               
             
@@ -456,7 +446,7 @@
                 
               
 
-              <time title="创建时间：2019-07-04 16:20:00 / 修改时间：16:43:33" itemprop="dateCreated datePublished" datetime="2019-07-04T16:20:00+08:00">2019-07-04</time>
+              <time title="创建时间：2019-07-22 11:00:00 / 修改时间：11:01:35" itemprop="dateCreated datePublished" datetime="2019-07-22T11:00:00+08:00">2019-07-22</time>
             </span>
           
 
@@ -466,21 +456,6 @@
             
           
 
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/web前端/" itemprop="url" rel="index"><span itemprop="name">web前端</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -521,44 +496,64 @@
       
 
       
-        <h4>1）想开发项目，哪里找教程？</h4>
-<h4>2）关于前端的有趣网站</h4>
+        <h3 id="需求踩坑之动态获取数据表格"><a href="#需求踩坑之动态获取数据表格" class="headerlink" title="需求踩坑之动态获取数据表格"></a>需求踩坑之动态获取数据表格</h3><h5 id="1-需求"><a href="#1-需求" class="headerlink" title="1.需求"></a>1.需求</h5><p>最近拿到了这样一个需求</p>
+<p>要求是这样的:</p>
+<p>1.渲染一个表格,要求表头为1-30的数字排序</p>
+<p>2.获取后台传过来的一个长度不固定的字符串</p>
+<p>3.将这个字符串2个绑定为一小组,分别填入到这个表格的<code>tbody</code>中</p>
+<p>4.当填入的数据为30个时,即要换行在下一行展示</p>
+<p>例如:</p>
+<p>效果图:</p>
+<p><img src="http://ww1.sinaimg.cn/large/c596f419ly1g58ew7kszmj21200c93z0.jpg" alt></p>
+<p>后台接受的数据:</p>
+<p><img src="http://ww1.sinaimg.cn/large/c596f419ly1g58ewyg4acj20ez038wei.jpg" alt></p>
+<h5 id="2-实施"><a href="#2-实施" class="headerlink" title="2.实施"></a>2.实施</h5><p>一开始使用的element-ui</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">el-table</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:data</span>=<span class="string">"tableData"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">style</span>=<span class="string">"width: 100%"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">      <span class="attr">prop</span>=<span class="string">"date"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">label</span>=<span class="string">"日期"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">width</span>=<span class="string">"180"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">      <span class="attr">prop</span>=<span class="string">"name"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">label</span>=<span class="string">"姓名"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">width</span>=<span class="string">"180"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">      <span class="attr">prop</span>=<span class="string">"address"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">label</span>=<span class="string">"地址"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">el-table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h5>一、前端项目哪里找？</h5>
+<p>上面这个是element-ui的官方文档中的代码</p>
+<p>需要传入一个tableData的数组,</p>
+<p>代码为:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      tableData: [&#123;</span><br><span class="line">        date: <span class="string">'2016-05-02'</span>,</span><br><span class="line">        name: <span class="string">'王小虎'</span>,</span><br><span class="line">        address: <span class="string">'上海市普陀区金沙江路 1518 弄'</span></span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        date: <span class="string">'2016-05-04'</span>,</span><br><span class="line">        name: <span class="string">'王小虎'</span>,</span><br><span class="line">        address: <span class="string">'上海市普陀区金沙江路 1517 弄'</span></span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        date: <span class="string">'2016-05-01'</span>,</span><br><span class="line">        name: <span class="string">'王小虎'</span>,</span><br><span class="line">        address: <span class="string">'上海市普陀区金沙江路 1519 弄'</span></span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        date: <span class="string">'2016-05-03'</span>,</span><br><span class="line">        name: <span class="string">'王小虎'</span>,</span><br><span class="line">        address: <span class="string">'上海市普陀区金沙江路 1516 弄'</span></span><br><span class="line">      &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>前端的入门教程网上很多，只要你搜索呼啦啦就出来了，因此啊，就不整理了。主要整理一下，哪里可以找到前端项目，就是有源代码的，可以拿来学习或者拿来用的。</p>
-<p>没有详细的教程，但可以找到项目并查看源代码和效果图：<br><br>1、<a href="https://link.zhihu.com/?target=http%3A//codepen.io/" target="_blank" rel="noopener">CodePen</a><br><img src="https://pic1.zhimg.com/80/v2-0738b819523d78508ec1aedef74c9788_hd.png" alt="blockchain"></p>
-<p>网站里有很多很酷的特效，而且看到它们的源代码，也可以看到效果图。</p>
-<p>其实类似的网站有很多，就不一一介绍了：</p>
-<ul>
-<li>[RunJS](https://link.zhihu.com/?target=http%3A//runjs.cn/square)</li>
-<li>[CSSdeck](https://link.zhihu.com/?target=http%3A//cssdeck.com/)</li>
-</ul>
-2、 [CodePlayer](https://link.zhihu.com/?target=http%3A//thecodeplayer.com/)
+<p>这怎么传????</p>
+<p><img src="http://ww1.sinaimg.cn/large/c596f419ly1g58f1hgikgj20jg0jxq3i.jpg" alt></p>
+<p>先开始做吧</p>
+<p>首先使用v-for生成30个表头</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:prop</span>=<span class="string">"'msg'+item"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:label</span>=<span class="string">"String(item)"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-for</span>=<span class="string">"(item, index) in 30"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:key</span>=<span class="string">"index"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">width</span>=<span class="string">"45"</span></span></span><br><span class="line"><span class="tag">&gt;</span><span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://pic2.zhimg.com/80/v2-eac21e2b09cc78ec2a85e03d5d08b479_hd.png" alt="blockchain"></p>
-<p>网站里有各种项目效果，选择自己想学的，同样可以看到源代码和效果图，和codepen不同的是你可以看到作者是怎样把代码打出来的。</p>
-<p>3、<a href="https://link.zhihu.com/?target=http%3A//www.html5tricks.com/" target="_blank" rel="noopener">html5tricks</a></p>
-<p><img src="https://pic4.zhimg.com/80/v2-6458e2ebef631461ec53c22d7445dcbb_hd.png" alt="blockchain"><br>网站里有很多前端实现的功能，可以在线查看效果，也可以下载源码的。</p>
-<p>有详细的教程，而且步骤详细，教你一步步开发出项目：<br><br>4、<a href="https://link.zhihu.com/?target=http%3A//ideabook.phodal.com/" target="_blank" rel="noopener">phodal/ideabook</a></p>
-<p><img src="https://pic1.zhimg.com/80/v2-958230ef01e5da535fd4c422e98d7a54_hd.png" alt="blockchain"><br>一个练手项目集，有很多实战项目，有步骤、效果图，同样可以看到源代码啊。</p>
-<p>5、<a href="https://link.zhihu.com/?target=https%3A//www.shiyanlou.com/courses/%3Fcourse_type%3Dall%26tag%3DWeb" target="_blank" rel="noopener">实验楼-WEB</a><br><img src="https://pic4.zhimg.com/80/v2-a3100fbbb4c3c8364f3394893c2f5cbf_hd.png" alt="blockchain"><br>网站里有很多前端项目教程，可以跟着教程一步步在环境中实现，并查看效果图，同样可以下载源代码，非常适合项目实战学习。</p>
-<h5>二、前端有趣的网站：</h5>
+<p>emmm,够狠,直接循环30个表头,因为<code>label</code>这里只能接受string类型的参数(虽然传入number类型的能用,但是会报错,这个和vuex中的直接修改stroe中的值一样)</p>
+<p>反正效果已经实现了,继续下一个步骤</p>
+<p>因为这个<code>tabledata</code>对应的是一个对象数组,所以要循环生成对象</p>
+<p>对象的属性怎么循环生成???</p>
+<p>???</p>
+<p>又一次陷入了迷茫</p>
+<p>这里我走了一次岔路</p>
+<p>既然不能循环生成,那么我自己手写</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> that=<span class="keyword">this</span>;</span><br><span class="line"><span class="keyword">var</span> itemobj = &#123;</span><br><span class="line">  msg1: <span class="string">""</span>,</span><br><span class="line">  msg2: <span class="string">""</span>,</span><br><span class="line">  msg3: <span class="string">""</span>,</span><br><span class="line">  msg4: <span class="string">""</span>,</span><br><span class="line">  msg5: <span class="string">""</span>,</span><br><span class="line">  msg6: <span class="string">""</span>,</span><br><span class="line">  msg7: <span class="string">""</span>,</span><br><span class="line">  msg8: <span class="string">""</span>,</span><br><span class="line">  msg9: <span class="string">""</span>,</span><br><span class="line">  msg10: <span class="string">""</span>,</span><br><span class="line">  msg11: <span class="string">""</span>,</span><br><span class="line">  msg12: <span class="string">""</span>,</span><br><span class="line">  msg13: <span class="string">""</span>,</span><br><span class="line">  msg14: <span class="string">""</span>,</span><br><span class="line">  msg15: <span class="string">""</span>,</span><br><span class="line">  msg16: <span class="string">""</span>,</span><br><span class="line">  msg17: <span class="string">""</span>,</span><br><span class="line">  msg18: <span class="string">""</span>,</span><br><span class="line">  msg19: <span class="string">""</span>,</span><br><span class="line">  msg20: <span class="string">""</span>,</span><br><span class="line">  msg21: <span class="string">""</span>,</span><br><span class="line">  msg22: <span class="string">""</span>,</span><br><span class="line">  msg23: <span class="string">""</span>,</span><br><span class="line">  msg24: <span class="string">""</span>,</span><br><span class="line">  msg25: <span class="string">""</span>,</span><br><span class="line">  msg26: <span class="string">""</span>,</span><br><span class="line">  msg27: <span class="string">""</span>,</span><br><span class="line">  msg28: <span class="string">""</span>,</span><br><span class="line">  msg29: <span class="string">""</span>,</span><br><span class="line">  msg30: <span class="string">""</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>1、<a href="https://link.zhihu.com/?target=http%3A//js1k.com/" target="_blank" rel="noopener">JS1k</a><br><img src="https://pic2.zhimg.com/80/v2-6973cd4efe7e9e43faa0a62754f4696d_hd.png" alt="blockchain"><br>大名鼎鼎的js1K，1K字节以内的Javascript代码，实现一个酷炫的动画、特效、小游戏之类的。官网从2010年开始征集参赛作品，现在已经办了７年了，还在办。</p>
-<p>2、<a href="https://link.zhihu.com/?target=http%3A//caniuse.com/" target="_blank" rel="noopener">Can I use</a><br><img src="https://pic3.zhimg.com/80/v2-9a8e98db47a309980e68bb69673fca4a_hd.png" alt="blockchain"><br>CAN I USE，相信每个前端同学都不陌生，查询浏览器兼容性的利器。</p>
-<p>3、<a href="https://link.zhihu.com/?target=http%3A//www.jshint.com/" target="_blank" rel="noopener">JSHint</a><br><img src="https://pic4.zhimg.com/80/v2-ed0f076adbad1a8adf5461d00ac41b3b_hd.png" alt="blockchain"><br>一个在线JS检测工具，可以检测JavaScript代码中的错误和潜在问题。</p>
-<p>4、<a href="https://link.zhihu.com/?target=http%3A//utf-8.jp/public/aaencode.html" target="_blank" rel="noopener">aaencode</a><br><img src="https://pic4.zhimg.com/80/v2-004af7196ee38380cd4da9bcb39a7adb_hd.png" alt="blockchain"><br>将JS代码转换成常用的网络表情，例如“(ﾟΘﾟ)”。转换的代码并不复杂，可以在源代码里看到。</p>
-<p>类似的还有：</p>
-<p><a href="https://link.zhihu.com/?target=http%3A//jsobfuscate.com/" target="_blank" rel="noopener">jsobfuscate</a><br><img src="https://pic2.zhimg.com/80/v2-fac2f73d6aba751ce4dad9f0899067e9_hd.png" alt="blockchain"><br>一个在线混淆工具，通过先进的算法，来混淆你的JavaScript代码，使其不可读。该工具还可以减小文件的大小，以便快速加载。 </p>
-<p>5、<a href="https://link.zhihu.com/?target=http%3A//www.bestcssbuttongenerator.com/" target="_blank" rel="noopener">Best CSS Button Generator</a><br><img src="https://pic3.zhimg.com/80/v2-0d7dd74ac4cc5a8c1c7b255314e5caa6_hd.png" alt="blockchain"><br>网站主要提供各种按钮的CSS代码，你可以从预设的按钮中选择并使用模板用于自己的设计，还可以查看源代码，非常适合学习。</p>
-<p>还有一个类似的：</p>
-<p><a href="https://link.zhihu.com/?target=http%3A//enjoycss.com/" target="_blank" rel="noopener">Enjoy CSS</a><br><br><br><br><img src="https://pic4.zhimg.com/80/v2-fee0381436d015f1723130f3e3406fef_hd.png" alt="blockchain"></p>
-<p>网站是一个完整的代码生成器，可以自定义输入域或CSS3按钮，同样可以查看源代码，适合学习。</p>
-<p>6、<a href="https://link.zhihu.com/?target=http%3A//www.blooberry.com/indexdot/css/propindex/all.htm" target="_blank" rel="noopener">CSS属性指引</a><br><br><br><br><img src="https://pic3.zhimg.com/80/v2-cb485f0f0334ef004496a2aef996bcee_hd.png" alt="blockchain"></p>
-<p>一份清单，按字母表顺序列出了每个CSS属性。</p>
-<p>7、<a href="https://link.zhihu.com/?target=https%3A//uptodate.frontendrescue.org/" target="_blank" rel="noopener">frontendrescue</a><br><br><br><br><img src="https://pic1.zhimg.com/80/v2-f1cf27510385bf12a341c76340f19958_hd.png" alt="blockchain"></p>
-<p>里面分享了网络上关于前端的各种资源、大牛等信息，总之很多资源就对了。</p>
+<p>先不管如何,效果实现就ok</p>
+<p>然后对数据进行转换</p>
+<p>要创建的行为要接受的数据/30/2</p>
+<p>30为一列的个数,2为每个单元格展示两个数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> strlength = msg.length;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 需要创建多少列</span></span><br><span class="line"><span class="keyword">var</span> listNum = <span class="built_in">Math</span>.ceil(strlength / <span class="number">30</span> / <span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(listNum);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将拿到的数据两个一组拼成一个30位的数组</span></span><br><span class="line"><span class="comment">// 控制字符串每两位加一个,</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertEnter</span>(<span class="params">str, n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> len = str.length;</span><br><span class="line">  <span class="keyword">var</span> strTemp = <span class="string">""</span>;</span><br><span class="line">  <span class="keyword">if</span> (len &gt; n) &#123;</span><br><span class="line">    strTemp = str.substring(<span class="number">0</span>, n);</span><br><span class="line">    str = str.substring(n, len);</span><br><span class="line">    <span class="keyword">return</span> strTemp + <span class="string">","</span> + insertEnter(str, n);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> str;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 使字符串转为数组</span></span><br><span class="line"><span class="keyword">var</span> allMsgList = insertEnter(msg, <span class="number">2</span>).split(<span class="string">","</span>);</span><br><span class="line"><span class="built_in">console</span>.log(allMsgList);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建表数据</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(itemobj);</span><br><span class="line"><span class="built_in">console</span>.log();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; listNum; i++) &#123;</span><br><span class="line">  that.tableData.push(itemobj);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(that.tableData);</span><br><span class="line"><span class="comment">// 让字符串数组的每一项去找到对应的数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 拆分多个数组</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sliceArray</span>(<span class="params">array, size</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> result = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> x = <span class="number">0</span>; x &lt; <span class="built_in">Math</span>.ceil(array.length / size); x++) &#123;</span><br><span class="line">    <span class="keyword">var</span> start = x * size;</span><br><span class="line">    <span class="keyword">var</span> end = start + size;</span><br><span class="line">    result.push(array.slice(start, end));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> groupedArray = sliceArray(allMsgList, <span class="number">30</span>);</span><br></pre></td></tr></table></figure>
+
+<p>经过这一系列操作后</p>
+<p>得到的<code>groupedArray</code>的值为</p>
+<p><img src="http://ww1.sinaimg.cn/large/c596f419ly1g58fctt4qpj20ff06xjrp.jpg" alt></p>
+<p>ok,这就是想要的,那么怎么填充上去呢?</p>
+<p>???</p>
+<p>再写一次循环?</p>
+<p>在这里我卡住了</p>
+<p>既然element-ui不能实现的功能,那么用原生来写</p>
+<p>这时候我拿到的数据为上图所示,展示的话就需要循环创建接受的数据/30/2的行</p>
+<p>然后在每一行中循环生成每一个列</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span> <span class="attr">v-for</span>=<span class="string">"(item, index) in 30"</span> <span class="attr">:key</span>=<span class="string">"index"</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span> <span class="attr">v-for</span>=<span class="string">"(alllist, index) in allMsgList"</span> <span class="attr">:key</span>=<span class="string">"index"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span> <span class="attr">v-for</span>=<span class="string">"(item, index) in alllist"</span> <span class="attr">:key</span>=<span class="string">"index"</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>经过两次循环,然后得到了最上面的需求结果</p>
+<h5 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h5><p>这个需求最主要的就是用需要大量的数据的交互</p>
+<p>需要动态实时的将其展示在上面,所以逻辑不能太复杂</p>
+<p>如果我继续手写循环生成的话,可能我接受到了数据开始渲染,上一条数据还没有渲染完成</p>
+<p>所以最开始就应该从简单,确保数据的稳定传输入手</p>
 
       
     </div>
@@ -603,7 +598,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://abc.zhaoloveping.top/2019/07/04/前端Web开发资源整理/" title="前端Web开发资源整理">http://abc.zhaoloveping.top/2019/07/04/前端Web开发资源整理/</a>
+    <a href="http://abc.zhaoloveping.top/2019/07/22/需求踩坑之动态渲染大量数据表格/" title="需求踩坑之动态渲染大量数据表格">http://abc.zhaoloveping.top/2019/07/22/需求踩坑之动态渲染大量数据表格/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-Hans" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -619,7 +614,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/web前端资源/" rel="tag"># web前端资源</a>
+            <a href="/tags/需求/" rel="tag"># 需求</a>
           
         </div>
       
@@ -632,15 +627,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/07/12/websocket原理及应用/" rel="next" title="websocket原理及应用">
+                <i class="fa fa-chevron-left"></i> websocket原理及应用
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/05/这几天工作中websocket踩坑/" rel="prev" title="这几天工作中websocket踩坑">
-                这几天工作中websocket踩坑 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -828,7 +823,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">1）想开发项目，哪里找教程？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">2）关于前端的有趣网站</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">2.1.</span> <span class="nav-text">一、前端项目哪里找？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">2.2.</span> <span class="nav-text">二、前端有趣的网站：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求踩坑之动态获取数据表格"><span class="nav-number">1.</span> <span class="nav-text">需求踩坑之动态获取数据表格</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-需求"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.需求</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-实施"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.实施</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-总结"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.总结</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1020,7 +1015,7 @@
 
 <script>
   window.livereOptions = {
-    refer: '2019/07/04/前端Web开发资源整理/'
+    refer: '2019/07/22/需求踩坑之动态渲染大量数据表格/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
