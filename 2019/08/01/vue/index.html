@@ -109,14 +109,18 @@
 
 
 
-  <meta name="keywords" content="jacob的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="jacob的个人博客">
-<meta property="og:url" content="http://abc.zhaoloveping.top/tags/web前端/index.html">
+  <meta name="description" content="vue踩坑之渲染对象1.问题最近在工作中遇到这这样的问题,要讲一个对象的一条属性使用差值语法展示出来 html代码如下: 123&amp;lt;div class=&quot;hello&quot;&amp;gt;  &amp;lt;h1&amp;gt;&amp;#123;&amp;#123;msg.name&amp;#125;&amp;#125;&amp;lt;/h1&amp;gt;&amp;lt;/div&amp;gt;  一个很普通的代码片段,需要展示出来, 现在在data里面传入这个对象 12345da">
+<meta name="keywords" content="web前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue踩坑之渲染对象">
+<meta property="og:url" content="http://abc.zhaoloveping.top/2019/08/01/vue/index.html">
 <meta property="og:site_name" content="jacob的个人博客">
+<meta property="og:description" content="vue踩坑之渲染对象1.问题最近在工作中遇到这这样的问题,要讲一个对象的一条属性使用差值语法展示出来 html代码如下: 123&amp;lt;div class=&quot;hello&quot;&amp;gt;  &amp;lt;h1&amp;gt;&amp;#123;&amp;#123;msg.name&amp;#125;&amp;#125;&amp;lt;/h1&amp;gt;&amp;lt;/div&amp;gt;  一个很普通的代码片段,需要展示出来, 现在在data里面传入这个对象 12345da">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-01T02:35:49.833Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jacob的个人博客">
+<meta name="twitter:title" content="vue踩坑之渲染对象">
+<meta name="twitter:description" content="vue踩坑之渲染对象1.问题最近在工作中遇到这这样的问题,要讲一个对象的一条属性使用差值语法展示出来 html代码如下: 123&amp;lt;div class=&quot;hello&quot;&amp;gt;  &amp;lt;h1&amp;gt;&amp;#123;&amp;#123;msg.name&amp;#125;&amp;#125;&amp;lt;/h1&amp;gt;&amp;lt;/div&amp;gt;  一个很普通的代码片段,需要展示出来, 现在在data里面传入这个对象 12345da">
 
 
 
@@ -124,7 +128,7 @@
 
   
   
-  <link rel="canonical" href="http://abc.zhaoloveping.top/tags/web前端/">
+  <link rel="canonical" href="http://abc.zhaoloveping.top/2019/08/01/vue/">
 
 
 
@@ -134,7 +138,7 @@
   };
 </script>
 
-  <title>标签: web前端 | jacob的个人博客</title>
+  <title>vue踩坑之渲染对象 | jacob的个人博客</title>
   
 
 
@@ -182,7 +186,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -240,7 +244,7 @@
         
         
           
-          <li class="menu-item menu-item-标签 menu-item-active">
+          <li class="menu-item menu-item-标签">
 
     
     
@@ -333,31 +337,6 @@
   
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
   
 
   
@@ -403,83 +382,259 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>web前端<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://abc.zhaoloveping.top/2019/08/01/vue/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="jacob">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/my.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jacob的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2019/08/01/vue/" itemprop="url">
-            
-              <span itemprop="name">vue踩坑之渲染对象</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">vue踩坑之渲染对象
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-01T10:35:00+08:00" content="2019-08-01">
-          08-01
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
 
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-01 10:35:00 / 修改时间：10:35:49" itemprop="dateCreated datePublished" datetime="2019-08-01T10:35:00+08:00">2019-08-01</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h3 id="vue踩坑之渲染对象"><a href="#vue踩坑之渲染对象" class="headerlink" title="vue踩坑之渲染对象"></a>vue踩坑之渲染对象</h3><h4 id="1-问题"><a href="#1-问题" class="headerlink" title="1.问题"></a>1.问题</h4><p>最近在工作中遇到这这样的问题,要讲一个对象的一条属性使用差值语法展示出来</p>
+<p>html代码如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"hello"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;msg.name&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/07/05/这几天工作中websocket踩坑/" itemprop="url">
-            
-              <span itemprop="name">这几天工作中websocket踩坑</span>
-            
-          </a>
-        
-      </h2>
+<p>一个很普通的代码片段,需要展示出来,</p>
+<p>现在在data里面传入这个对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data () &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    msg:&#123;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-05T16:18:00+08:00" content="2019-07-05">
-          07-05
-        </time>
-      </div>
+<p>传入这个msg后,需要在vue的生命周期函数中发送ajax请求获取数据,并让获取到的msg替代data中的msg,此处,我直接替换</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mounted() &#123;</span><br><span class="line">  <span class="keyword">this</span>.msg.name=<span class="string">"222"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </article>
+<p>我在<code>mounted</code>中替换了msg的值,然后我打开了页面,差值语法中的<code>msg.name</code>并没有刷新出来</p>
+<h4 id="2-分析问题"><a href="#2-分析问题" class="headerlink" title="2.分析问题"></a>2.分析问题</h4><p>遇到问题后首先分析,这进行视图更新,并没有触发视图更新,然而log后的msg确实是存在name属性</p>
+<p>首先查看vue的官方文档,对于这方面的描述</p>
+<p>官方文档中有这样的一段话</p>
+<p>“当vue的data里边声明或者已经赋值过的对象或者数组（数组里边的值是对象）时，向对象中添加新的属性，如果更新此属性的值，是不会更新视图的。”</p>
+<p>这段话已经说得很明确了,我们也是这样做的</p>
+<p>我们在data里面声明了msg对象,然后在生命周期函数中往msg对象添加了新属性name</p>
+<p>所以造成了vue的视图未更新</p>
+<h4 id="3-解决问题"><a href="#3-解决问题" class="headerlink" title="3.解决问题"></a>3.解决问题</h4><p>既然官方文档已经说的很明确,如果往对象中添加新的属性,如果更新此属性的值,是不会更新视图的</p>
+<p>那么,我们首先可以将msg的name在data中定义</p>
+<p>即:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">data () &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    msg:&#123;</span><br><span class="line">        name:<span class="string">""</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>那么我们已经拥有了name属性,在下面更新name属性,也会造成vue的视图层更新</p>
+<p>那么,如果我们不想在msg中添加name属性呢?</p>
+<p>vue中也提供了对应的方法,即在vue实例中有一个$set方法</p>
+<p>即:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mounted() &#123;</span><br><span class="line">  <span class="keyword">this</span>.$<span class="keyword">set</span>(this.msg,"name","222")</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>this.$set要传入三个值,第一个值为要修改的对象/数组,第二个值为要修改的属性,第三个值为要修改的内容</p>
+<p>这样也可以触发vue的视图更新</p>
+<p>遇到问题不要怕,要学会分析问题并解决问题</p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    <div>
+    
+      <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+     
+    </div>
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>jacob</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="http://abc.zhaoloveping.top/2019/08/01/vue/" title="vue踩坑之渲染对象">http://abc.zhaoloveping.top/2019/08/01/vue/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-Hans" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/web前端/" rel="tag"># web前端</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/22/需求踩坑之动态渲染大量数据表格/" rel="next" title="需求踩坑之动态渲染大量数据表格">
+                <i class="fa fa-chevron-left"></i> 需求踩坑之动态渲染大量数据表格
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NTE4NC8yMTcwMA=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -499,8 +654,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -618,6 +782,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#vue踩坑之渲染对象"><span class="nav-number">1.</span> <span class="nav-text">vue踩坑之渲染对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-问题"><span class="nav-number">1.1.</span> <span class="nav-text">1.问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-分析问题"><span class="nav-number">1.2.</span> <span class="nav-text">2.分析问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-解决问题"><span class="nav-number">1.3.</span> <span class="nav-text">3.解决问题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -778,6 +959,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
 
   
 
@@ -793,6 +978,26 @@
 
   
 
+
+  
+    
+
+
+<script>
+  window.livereOptions = {
+    refer: '2019/08/01/vue/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
 
 
   
