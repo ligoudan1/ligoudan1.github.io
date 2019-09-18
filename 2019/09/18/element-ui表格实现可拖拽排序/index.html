@@ -109,18 +109,23 @@
 
 
 
-  <meta name="description" content="数组中好用的方法1.find​    find为arr数组调用的方法,接受一个callback返回函数,而arr.find()返回的是经过callback函数符合函数条件的第一个值 ​    需要注意的是:在callback开始执行的时候,再去操作arr数组的值,此时并不会改变callback的执行,callback执行的依旧是原数组的值 ​    例如: 12345var arr=[1,2,3]">
-<meta name="keywords" content="前端学习">
+  <meta name="description" content="element-ui表格实现可拖拽排序1.最终效果 可拖拽行/列   2.实现过程基于SortableJS可拖拽插件的实现 SortableJS项目地址SortableJS 1.引入SortableJSInstall with NPM: 1$ npm install sortablejs --save  在main.js中引入或者在单独的组件中引入 1import Sortable from &apos;s">
+<meta name="keywords" content="element-ui">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端开荒之数组中好用的方法(一)">
-<meta property="og:url" content="http://abc.zhaoloveping.top/2019/08/13/前端开荒之数组中好用的方法-一/index.html">
+<meta property="og:title" content="element-ui表格实现可拖拽排序">
+<meta property="og:url" content="http://abc.zhaoloveping.top/2019/09/18/element-ui表格实现可拖拽排序/index.html">
 <meta property="og:site_name" content="jacob的个人博客">
-<meta property="og:description" content="数组中好用的方法1.find​    find为arr数组调用的方法,接受一个callback返回函数,而arr.find()返回的是经过callback函数符合函数条件的第一个值 ​    需要注意的是:在callback开始执行的时候,再去操作arr数组的值,此时并不会改变callback的执行,callback执行的依旧是原数组的值 ​    例如: 12345var arr=[1,2,3]">
+<meta property="og:description" content="element-ui表格实现可拖拽排序1.最终效果 可拖拽行/列   2.实现过程基于SortableJS可拖拽插件的实现 SortableJS项目地址SortableJS 1.引入SortableJSInstall with NPM: 1$ npm install sortablejs --save  在main.js中引入或者在单独的组件中引入 1import Sortable from &apos;s">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-13T01:49:54.255Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c596f419ly1g73vtm0s2rj20qa078wem.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c596f419ly1g73vuebjk4j20nd06yaa7.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c596f419ly1g73vv8nyvnj20nq070t8u.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c596f419ly1g73vvm96o0j20pb077jrs.jpg">
+<meta property="og:updated_time" content="2019-09-18T11:31:54.970Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端开荒之数组中好用的方法(一)">
-<meta name="twitter:description" content="数组中好用的方法1.find​    find为arr数组调用的方法,接受一个callback返回函数,而arr.find()返回的是经过callback函数符合函数条件的第一个值 ​    需要注意的是:在callback开始执行的时候,再去操作arr数组的值,此时并不会改变callback的执行,callback执行的依旧是原数组的值 ​    例如: 12345var arr=[1,2,3]">
+<meta name="twitter:title" content="element-ui表格实现可拖拽排序">
+<meta name="twitter:description" content="element-ui表格实现可拖拽排序1.最终效果 可拖拽行/列   2.实现过程基于SortableJS可拖拽插件的实现 SortableJS项目地址SortableJS 1.引入SortableJSInstall with NPM: 1$ npm install sortablejs --save  在main.js中引入或者在单独的组件中引入 1import Sortable from &apos;s">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/c596f419ly1g73vtm0s2rj20qa078wem.jpg">
 
 
 
@@ -128,7 +133,7 @@
 
   
   
-  <link rel="canonical" href="http://abc.zhaoloveping.top/2019/08/13/前端开荒之数组中好用的方法-一/">
+  <link rel="canonical" href="http://abc.zhaoloveping.top/2019/09/18/element-ui表格实现可拖拽排序/">
 
 
 
@@ -138,7 +143,7 @@
   };
 </script>
 
-  <title>前端开荒之数组中好用的方法(一) | jacob的个人博客</title>
+  <title>element-ui表格实现可拖拽排序 | jacob的个人博客</title>
   
 
 
@@ -398,7 +403,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://abc.zhaoloveping.top/2019/08/13/前端开荒之数组中好用的方法-一/">
+    <link itemprop="mainEntityOfPage" href="http://abc.zhaoloveping.top/2019/09/18/element-ui表格实现可拖拽排序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="jacob">
@@ -415,7 +420,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">前端开荒之数组中好用的方法(一)
+          <h1 class="post-title" itemprop="name headline">element-ui表格实现可拖拽排序
 
               
             
@@ -441,7 +446,7 @@
                 
               
 
-              <time title="创建时间：2019-08-13 09:49:00 / 修改时间：09:49:54" itemprop="dateCreated datePublished" datetime="2019-08-13T09:49:00+08:00">2019-08-13</time>
+              <time title="创建时间：2019-09-18 19:31:00 / 修改时间：19:31:54" itemprop="dateCreated datePublished" datetime="2019-09-18T19:31:00+08:00">2019-09-18</time>
             </span>
           
 
@@ -491,39 +496,41 @@
       
 
       
-        <h3 id="数组中好用的方法"><a href="#数组中好用的方法" class="headerlink" title="数组中好用的方法"></a>数组中好用的方法</h3><h4 id="1-find"><a href="#1-find" class="headerlink" title="1.find"></a>1.find</h4><p>​    find为arr数组调用的方法,接受一个callback返回函数,而arr.find()返回的是经过callback函数符合函数条件的第一个值</p>
-<p>​    需要注意的是:在callback开始执行的时候,再去操作arr数组的值,此时并不会改变callback的执行,callback执行的依旧是原数组的值</p>
-<p>​    例如:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> arr2 =arr,find(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> e &gt;<span class="number">2</span></span><br><span class="line">&#125;);</span><br><span class="line">arr.push(<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+        <h3 id="element-ui表格实现可拖拽排序"><a href="#element-ui表格实现可拖拽排序" class="headerlink" title="element-ui表格实现可拖拽排序"></a>element-ui表格实现可拖拽排序</h3><h4 id="1-最终效果"><a href="#1-最终效果" class="headerlink" title="1.最终效果"></a>1.最终效果</h4><p><img src="http://ww1.sinaimg.cn/large/c596f419ly1g73vtm0s2rj20qa078wem.jpg" alt="TIM截图20190918191134.png"></p>
+<p>可拖拽行/列<img src="http://ww1.sinaimg.cn/large/c596f419ly1g73vuebjk4j20nd06yaa7.jpg" alt="TIM截图20190918191317.png"></p>
+<p><img src="http://ww1.sinaimg.cn/large/c596f419ly1g73vv8nyvnj20nq070t8u.jpg" alt="TIM截图20190918191406.png"></p>
+<p><img src="http://ww1.sinaimg.cn/large/c596f419ly1g73vvm96o0j20pb077jrs.jpg" alt="TIM截图20190918191428.png"></p>
+<h4 id="2-实现过程"><a href="#2-实现过程" class="headerlink" title="2.实现过程"></a>2.实现过程</h4><p>基于<code>SortableJS</code>可拖拽插件的实现</p>
+<p><code>SortableJS</code>项目地址<a href="https://github.com/SortableJS/Sortable" target="_blank" rel="noopener">SortableJS</a></p>
+<h5 id="1-引入SortableJS"><a href="#1-引入SortableJS" class="headerlink" title="1.引入SortableJS"></a>1.引入SortableJS</h5><p>Install with NPM:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install sortablejs --save</span><br></pre></td></tr></table></figure>
 
-<p>此时在callback已经执行,然后再去push,是不会按照push执行的</p>
-<h6 id="find的高级用法"><a href="#find的高级用法" class="headerlink" title="find的高级用法"></a>find的高级用法</h6><p>​    我们可以利用find方法来寻找一个较为复杂的数组</p>
-<p>​    例如:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=[</span><br><span class="line">    &#123;<span class="attr">id</span>:<span class="number">1</span>,</span><br><span class="line">    name:<span class="string">"xxx"</span>,</span><br><span class="line">    age:<span class="number">15</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">id</span>:<span class="number">99</span>,</span><br><span class="line">    name:<span class="string">"zzz"</span>,</span><br><span class="line">    age:<span class="number">14</span>&#125;,</span><br><span class="line">    ...</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>在main.js中引入或者在单独的组件中引入</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Sortable <span class="keyword">from</span> <span class="string">'sortablejs'</span>;</span><br></pre></td></tr></table></figure>
 
-<p>当然,我现在只写了两条,实际情况下成百上千条都有可能,这时候比如我们要找</p>
-<p>id=99的数组的一项的name是什么</p>
-<p>此时便可以调用find方法</p>
-<p>我在这里定义一个find方法的函数</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> findName = <span class="function">(<span class="params">arr,value</span>) =&gt;</span> arr,find(<span class="function"><span class="params">obj</span> =&gt;</span> obj.id=value).name</span><br></pre></td></tr></table></figure>
+<h5 id="2-创建element-ui表格"><a href="#2-创建element-ui表格" class="headerlink" title="2.创建element-ui表格"></a>2.创建element-ui表格</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-table</span> <span class="attr">:data</span>=<span class="string">"tableData"</span> <span class="attr">border</span> <span class="attr">row-key</span>=<span class="string">"id"</span> <span class="attr">align</span>=<span class="string">"left"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">el-table-column</span></span></span><br><span class="line"><span class="tag">    <span class="attr">v-for</span>=<span class="string">"(item, index) in col"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:key</span>=<span class="string">"`col_$&#123;index&#125;`"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:prop</span>=<span class="string">"dropCol[index].prop"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:label</span>=<span class="string">"item.label"</span></span></span><br><span class="line"><span class="tag">  &gt;</span><span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-table</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>这个<code>findName</code>函数接受两个参数,第一个参数arr表示要查询的数组,第二个参数表示要查询的id的值,根据这个函数,则可以找到对应id的name</p>
-<p>当然,也可以使用for循环来找对应的值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> id=<span class="number">99</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i =<span class="number">0</span>;i&lt;arr.length;i++) &#123;</span><br><span class="line">    <span class="keyword">if</span>(arr[i].id = id ) &#123;</span><br><span class="line">        <span class="keyword">return</span> arr[i].name</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如上文循环创建了element-ui的表格内容</p>
+<h5 id="3-在data中声明col-dropCol"><a href="#3-在data中声明col-dropCol" class="headerlink" title="3.在data中声明col,dropCol"></a>3.在data中声明col,dropCol</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">       col: [</span><br><span class="line">        &#123;</span><br><span class="line">          label: <span class="string">"日期"</span>,</span><br><span class="line">          prop: <span class="string">"date"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          label: <span class="string">"姓名"</span>,</span><br><span class="line">          prop: <span class="string">"name"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          label: <span class="string">"地址"</span>,</span><br><span class="line">          prop: <span class="string">"address"</span></span><br><span class="line">        &#125;</span><br><span class="line">      ],</span><br><span class="line">      dropCol: [</span><br><span class="line">        &#123;</span><br><span class="line">          label: <span class="string">"日期"</span>,</span><br><span class="line">          prop: <span class="string">"date"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          label: <span class="string">"姓名"</span>,</span><br><span class="line">          prop: <span class="string">"name"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          label: <span class="string">"地址"</span>,</span><br><span class="line">          prop: <span class="string">"address"</span></span><br><span class="line">        &#125;</span><br><span class="line">      ],      <span class="attr">tableData</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          id: <span class="string">"1"</span>,</span><br><span class="line">          date: <span class="string">"2016-05-02"</span>,</span><br><span class="line">          name: <span class="string">"王小虎1"</span>,</span><br><span class="line">          address: <span class="string">"上海市普陀区金沙江路 100 弄"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          id: <span class="string">"2"</span>,</span><br><span class="line">          date: <span class="string">"2016-05-04"</span>,</span><br><span class="line">          name: <span class="string">"王小虎2"</span>,</span><br><span class="line">          address: <span class="string">"上海市普陀区金沙江路 200 弄"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          id: <span class="string">"3"</span>,</span><br><span class="line">          date: <span class="string">"2016-05-01"</span>,</span><br><span class="line">          name: <span class="string">"王小虎3"</span>,</span><br><span class="line">          address: <span class="string">"上海市普陀区金沙江路 300 弄"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          id: <span class="string">"4"</span>,</span><br><span class="line">          date: <span class="string">"2016-05-03"</span>,</span><br><span class="line">          name: <span class="string">"王小虎4"</span>,</span><br><span class="line">          address: <span class="string">"上海市普陀区金沙江路 400 弄"</span></span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>这样进行大量的for循环找到的也是想同的值,然后找到之后进行return操作</p>
-<p>当然,我们也可以使用forEach来操作数组</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">arr.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(item.id==<span class="number">99</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(item.item.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>以默认为例,顺便创建tableData,</p>
+<p>此时我们就可以看到element-ui的默认表格了</p>
+<h5 id="4-添加行拖拽-列拖拽事件"><a href="#4-添加行拖拽-列拖拽事件" class="headerlink" title="4.添加行拖拽,列拖拽事件"></a>4.添加行拖拽,列拖拽事件</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">  <span class="comment">//行拖拽</span></span><br><span class="line">  rowDrop() &#123;</span><br><span class="line">    <span class="keyword">const</span> tbody = <span class="built_in">document</span>.querySelector(<span class="string">".el-table__body-wrapper tbody"</span>);</span><br><span class="line">    <span class="keyword">const</span> _this = <span class="keyword">this</span>;</span><br><span class="line">    Sortable.create(tbody, &#123;</span><br><span class="line">      onEnd(&#123; newIndex, oldIndex &#125;) &#123;</span><br><span class="line">        <span class="keyword">const</span> currRow = _this.tableData.splice(oldIndex, <span class="number">1</span>)[<span class="number">0</span>];</span><br><span class="line">        _this.tableData.splice(newIndex, <span class="number">0</span>, currRow);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//列拖拽</span></span><br><span class="line">  columnDrop() &#123;</span><br><span class="line">    <span class="keyword">const</span> wrapperTr = <span class="built_in">document</span>.querySelector(<span class="string">".el-table__header-wrapper tr"</span>);</span><br><span class="line">    <span class="keyword">this</span>.sortable = Sortable.create(wrapperTr, &#123;</span><br><span class="line">      animation: <span class="number">180</span>,</span><br><span class="line">      delay: <span class="number">0</span>,</span><br><span class="line">      onEnd: <span class="function"><span class="params">evt</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> oldItem = <span class="keyword">this</span>.dropCol[evt.oldIndex];</span><br><span class="line">        <span class="keyword">this</span>.dropCol.splice(evt.oldIndex, <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">this</span>.dropCol.splice(evt.newIndex, <span class="number">0</span>, oldItem);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>这样也可以接收到id为99的数组那项的值</p>
-<p>但是forEach有个很麻烦的地方,他会遍历整个数组的值,不会说遇到就停止,使用break和return都不会将其打断,这样是比较耗费性能的</p>
-<p>然而,就没有办法打断了吗?</p>
-<p>借用《JavaScript权威指南（6版）》7.9.1 forEach() 一句话</p>
-<p><code>注意，forEach（）无法在所有元素都传递给调用的函数之前终止遍历。也就是说，没有像for循环中使用的相应的break语句。如果要提前终止，必须把forEach（）方法放在一个try块中，并能抛出一个异常。如果forEach（）调用的函数抛出foreach.break异常，循环会提前终止</code></p>
-<p>​                        </p>
-<p>代码如下</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    arr.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">    	<span class="keyword">if</span>(item.id==<span class="number">99</span>) &#123;</span><br><span class="line">       		<span class="built_in">console</span>.log(item.item.name)</span><br><span class="line">            foreach.break=<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"StopIteration"</span>)</span><br><span class="line">    	&#125;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;<span class="keyword">catch</span>(e) &#123;</span><br><span class="line">               <span class="built_in">console</span>.log(e.message);</span><br><span class="line">               <span class="keyword">if</span>(e.message===<span class="string">"foreach is not defined"</span>) &#123;</span><br><span class="line">               		<span class="built_in">console</span>.log(<span class="string">"跳出来了?"</span>);</span><br><span class="line">               		 <span class="keyword">return</span>;</span><br><span class="line">           		&#125;<span class="keyword">else</span> <span class="keyword">throw</span> e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在methods中添加事件</p>
+<h5 id="5-在生命周期函数中阻止默认行为并加载拖拽事件"><a href="#5-在生命周期函数中阻止默认行为并加载拖拽事件" class="headerlink" title="5.在生命周期函数中阻止默认行为并加载拖拽事件"></a>5.在生命周期函数中阻止默认行为并加载拖拽事件</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mounted() &#123;</span><br><span class="line">          <span class="comment">// 阻止默认行为</span></span><br><span class="line">      <span class="built_in">document</span>.body.ondrop = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">        event.preventDefault();</span><br><span class="line">        event.stopPropagation();</span><br><span class="line">      &#125;;</span><br><span class="line">      <span class="keyword">this</span>.rowDrop();</span><br><span class="line">      <span class="keyword">this</span>.columnDrop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>此时就可以实现行列拖拽事件了</p>
+<h4 id="3-深思"><a href="#3-深思" class="headerlink" title="3.深思"></a>3.深思</h4><h5 id="如何存储已经拖拽了的状态呢"><a href="#如何存储已经拖拽了的状态呢" class="headerlink" title="如何存储已经拖拽了的状态呢?"></a>如何存储已经拖拽了的状态呢?</h5><p>每次我们刷新页面,会返回默认的表格排序,然而我们想把我们已经拖拽完成的存储起来要怎么做呢?</p>
+<p>这里就需要H5中的localStorage来帮忙了</p>
+<h6 id="1-监听拖拽改变事件"><a href="#1-监听拖拽改变事件" class="headerlink" title="1.监听拖拽改变事件"></a>1.监听拖拽改变事件</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">  tableData(newval, oldval) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(newval);</span><br><span class="line">  &#125;,</span><br><span class="line">  col() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.col);</span><br><span class="line">  &#125;,</span><br><span class="line">  dropCol() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.dropCol);</span><br><span class="line">    localStorage.setItem(<span class="string">"codelist"</span>, <span class="built_in">JSON</span>.stringify(<span class="keyword">this</span>.dropCol));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="2-将变化了的表格顺序存储起来"><a href="#2-将变化了的表格顺序存储起来" class="headerlink" title="2.将变化了的表格顺序存储起来"></a>2.将变化了的表格顺序存储起来</h6><p>如上面代码</p>
+<p><code>localStorage.setItem(&quot;codelist&quot;, JSON.stringify(this.dropCol));</code></p>
+<p>将监听到变化了的表格排序存储起来</p>
+<h6 id="3-在第一次加载进入的时候读取localStorage中的数据"><a href="#3-在第一次加载进入的时候读取localStorage中的数据" class="headerlink" title="3.在第一次加载进入的时候读取localStorage中的数据"></a>3.在第一次加载进入的时候读取localStorage中的数据</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">mounted() &#123;</span><br><span class="line">  <span class="keyword">var</span> that = <span class="keyword">this</span>;</span><br><span class="line">  <span class="comment">// 首先读取存储的列表项,如果有则加载已存储的列表项</span></span><br><span class="line">  <span class="built_in">console</span>.log(localStorage.getItem(<span class="string">"codelist"</span>));</span><br><span class="line">  <span class="keyword">if</span> (localStorage.getItem(<span class="string">"codelist"</span>)) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">111</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.parse(localStorage.getItem(<span class="string">"codelist"</span>)));</span><br><span class="line"></span><br><span class="line">   that.dropCol = <span class="built_in">JSON</span>.parse(localStorage.getItem(<span class="string">"codelist"</span>));</span><br><span class="line">    that.col = <span class="built_in">JSON</span>.parse(localStorage.getItem(<span class="string">"codelist"</span>));</span><br><span class="line">    <span class="comment">// 阻止默认行为</span></span><br><span class="line">    <span class="built_in">document</span>.body.ondrop = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">      event.preventDefault();</span><br><span class="line">      event.stopPropagation();</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">this</span>.rowDrop();</span><br><span class="line">    <span class="keyword">this</span>.columnDrop();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>这样就可以拿到已经存起来的数据了!</p>
 
       
     </div>
@@ -568,7 +575,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://abc.zhaoloveping.top/2019/08/13/前端开荒之数组中好用的方法-一/" title="前端开荒之数组中好用的方法(一)">http://abc.zhaoloveping.top/2019/08/13/前端开荒之数组中好用的方法-一/</a>
+    <a href="http://abc.zhaoloveping.top/2019/09/18/element-ui表格实现可拖拽排序/" title="element-ui表格实现可拖拽排序">http://abc.zhaoloveping.top/2019/09/18/element-ui表格实现可拖拽排序/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-Hans" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -584,7 +591,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/前端学习/" rel="tag"># 前端学习</a>
+            <a href="/tags/element-ui/" rel="tag"># element-ui</a>
           
         </div>
       
@@ -597,8 +604,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/01/vue/" rel="next" title="vue踩坑之渲染对象">
-                <i class="fa fa-chevron-left"></i> vue踩坑之渲染对象
+              <a href="/2019/09/11/正则校验大全-持续更新/" rel="next" title="正则校验大全(持续更新)">
+                <i class="fa fa-chevron-left"></i> 正则校验大全(持续更新)
               </a>
             
           </div>
@@ -606,10 +613,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/02/前端css代码规范/" rel="prev" title="前端css代码规范">
-                前端css代码规范 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -803,7 +806,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组中好用的方法"><span class="nav-number">1.</span> <span class="nav-text">数组中好用的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-find"><span class="nav-number">1.1.</span> <span class="nav-text">1.find</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#find的高级用法"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">find的高级用法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#element-ui表格实现可拖拽排序"><span class="nav-number">1.</span> <span class="nav-text">element-ui表格实现可拖拽排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-最终效果"><span class="nav-number">1.1.</span> <span class="nav-text">1.最终效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-实现过程"><span class="nav-number">1.2.</span> <span class="nav-text">2.实现过程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-引入SortableJS"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.引入SortableJS</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-创建element-ui表格"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.创建element-ui表格</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-在data中声明col-dropCol"><span class="nav-number">1.2.3.</span> <span class="nav-text">3.在data中声明col,dropCol</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-添加行拖拽-列拖拽事件"><span class="nav-number">1.2.4.</span> <span class="nav-text">4.添加行拖拽,列拖拽事件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-在生命周期函数中阻止默认行为并加载拖拽事件"><span class="nav-number">1.2.5.</span> <span class="nav-text">5.在生命周期函数中阻止默认行为并加载拖拽事件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-深思"><span class="nav-number">1.3.</span> <span class="nav-text">3.深思</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#如何存储已经拖拽了的状态呢"><span class="nav-number">1.3.1.</span> <span class="nav-text">如何存储已经拖拽了的状态呢?</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-监听拖拽改变事件"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">1.监听拖拽改变事件</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-将变化了的表格顺序存储起来"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">2.将变化了的表格顺序存储起来</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-在第一次加载进入的时候读取localStorage中的数据"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">3.在第一次加载进入的时候读取localStorage中的数据</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -995,7 +998,7 @@
 
 <script>
   window.livereOptions = {
-    refer: '2019/08/13/前端开荒之数组中好用的方法-一/'
+    refer: '2019/09/18/element-ui表格实现可拖拽排序/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
