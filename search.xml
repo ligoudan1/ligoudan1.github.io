@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>test</title>
-    <url>/2019/10/24/test/</url>
-    <content><![CDATA[<p>test</p>
-]]></content>
-  </entry>
-  <entry>
     <title>如何离线安装npm依赖包</title>
     <url>/2019/10/22/%E5%A6%82%E4%BD%95%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85npm%E4%BE%9D%E8%B5%96%E5%8C%85/</url>
     <content><![CDATA[<h1 id="离线安装npm包"><a href="#离线安装npm包" class="headerlink" title="离线安装npm包"></a>离线安装npm包</h1><h2 id="1-缘由"><a href="#1-缘由" class="headerlink" title="1.缘由"></a>1.缘由</h2><p>npm包管理工具作为我们前端开发者使用的工具,有时候因为一些业务的特殊性,需要将npm包离线安装</p>
