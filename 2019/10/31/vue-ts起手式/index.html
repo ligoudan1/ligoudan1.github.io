@@ -109,18 +109,20 @@
 
 
 
-  <meta name="description" content="typescript学习(二)1.类123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869// typescript 类// es5中增加构造函数function person2() &amp;#123;">
+  <meta name="description" content="现有vue项目与typescript结合1.安装必要插件12345安装vue的官方插件npm i vue-class-component vue-property-decorator --save// ts-loader typescript 必须安装，其他的相信你以后也会装上的npm i ts-loader typescript tslint tslint-loader tslint-confi">
 <meta name="keywords" content="jacob的个人博客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="typescript学习笔记(二)">
-<meta property="og:url" content="http://abc.zhaoloveping.top/2019/10/20/typescript学习笔记-二/index.html">
+<meta property="og:title" content="vue+ts起手式">
+<meta property="og:url" content="http://abc.zhaoloveping.top/2019/10/31/vue-ts起手式/index.html">
 <meta property="og:site_name" content="jacob的个人博客">
-<meta property="og:description" content="typescript学习(二)1.类123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869// typescript 类// es5中增加构造函数function person2() &amp;#123;">
+<meta property="og:description" content="现有vue项目与typescript结合1.安装必要插件12345安装vue的官方插件npm i vue-class-component vue-property-decorator --save// ts-loader typescript 必须安装，其他的相信你以后也会装上的npm i ts-loader typescript tslint tslint-loader tslint-confi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-20T14:01:42.000Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c596f419ly1g8hnwvtltrj20ma0qumz8.jpg">
+<meta property="og:updated_time" content="2019-10-31T12:39:17.570Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="typescript学习笔记(二)">
-<meta name="twitter:description" content="typescript学习(二)1.类123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869// typescript 类// es5中增加构造函数function person2() &amp;#123;">
+<meta name="twitter:title" content="vue+ts起手式">
+<meta name="twitter:description" content="现有vue项目与typescript结合1.安装必要插件12345安装vue的官方插件npm i vue-class-component vue-property-decorator --save// ts-loader typescript 必须安装，其他的相信你以后也会装上的npm i ts-loader typescript tslint tslint-loader tslint-confi">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/c596f419ly1g8hnwvtltrj20ma0qumz8.jpg">
 
 
 
@@ -128,7 +130,7 @@
 
   
   
-  <link rel="canonical" href="http://abc.zhaoloveping.top/2019/10/20/typescript学习笔记-二/">
+  <link rel="canonical" href="http://abc.zhaoloveping.top/2019/10/31/vue-ts起手式/">
 
 
 
@@ -138,7 +140,7 @@
   };
 </script>
 
-  <title>typescript学习笔记(二) | jacob的个人博客</title>
+  <title>vue+ts起手式 | jacob的个人博客</title>
   
 
 
@@ -385,7 +387,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://abc.zhaoloveping.top/2019/10/20/typescript学习笔记-二/">
+    <link itemprop="mainEntityOfPage" href="http://abc.zhaoloveping.top/2019/10/31/vue-ts起手式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="jacob">
@@ -402,7 +404,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">typescript学习笔记(二)
+          <h1 class="post-title" itemprop="name headline">vue+ts起手式
 
               
             
@@ -428,7 +430,7 @@
                 
               
 
-              <time title="创建时间：2019-10-20 22:01:35 / 修改时间：22:01:42" itemprop="dateCreated datePublished" datetime="2019-10-20T22:01:35+08:00">2019-10-20</time>
+              <time title="创建时间：2019-10-31 20:39:11 / 修改时间：20:39:17" itemprop="dateCreated datePublished" datetime="2019-10-31T20:39:11+08:00">2019-10-31</time>
             </span>
           
 
@@ -467,7 +469,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">1.9k</span>
+              <span title="本文字数">2.2k</span>
             </span>
           
 
@@ -498,16 +500,54 @@
       
 
       
-        <h1 id="typescript学习-二"><a href="#typescript学习-二" class="headerlink" title="typescript学习(二)"></a>typescript学习(二)</h1><h2 id="1-类"><a href="#1-类" class="headerlink" title="1.类"></a>1.类</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">// typescript 类</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// es5中增加构造函数</span><br><span class="line">function person2() &#123;</span><br><span class="line">    this.name = &quot;name&quot;;</span><br><span class="line">    this.age = &quot;age&quot;;</span><br><span class="line">&#125;</span><br><span class="line">this.hero = new person2();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 构造函数和原型链增加方法</span><br><span class="line">function person3() &#123;</span><br><span class="line">    this.name = &quot;name&quot;;</span><br><span class="line">    this.age = &quot;age&quot;;</span><br><span class="line">    this.say = function () &#123;</span><br><span class="line">        console.log(&apos;say&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 原型链增加属性和方法</span><br><span class="line">person3.prototype.sex = &quot;男&quot;;</span><br><span class="line">person3.prototype.run = function () &#123;</span><br><span class="line">    console.log(&apos;run&apos;);</span><br><span class="line">&#125;</span><br><span class="line">this.hero = new person3();</span><br><span class="line"></span><br><span class="line">// es5中的继承(原型链继承/对象冒充)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 对象冒充继承</span><br><span class="line">// 对象冒充继承可以构造函数里面的属性和方法,没办法继承原型链上面的属性和方法</span><br><span class="line">function person4() &#123;</span><br><span class="line">    this.name = &quot;name&quot;;</span><br><span class="line">    this.age = &quot;age&quot;;</span><br><span class="line">    this.say = function () &#123;</span><br><span class="line">        console.log(&apos;say&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function web() &#123;</span><br><span class="line">    person4.call(this);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 原型链继承</span><br><span class="line"></span><br><span class="line">function web2() &#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">web2.prototype = new person4();</span><br><span class="line"></span><br><span class="line">// 原型链继承+对象冒充</span><br><span class="line"></span><br><span class="line">function web2() &#123;</span><br><span class="line">    person3.call(this);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">web2.prototype = new person3();</span><br><span class="line"></span><br><span class="line">// 第二种继承方法</span><br><span class="line"></span><br><span class="line">// 原型链继承+对象冒充</span><br><span class="line"></span><br><span class="line">function web2() &#123;</span><br><span class="line">    person3.call(this);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">web2.prototype = person3.prototype;</span><br></pre></td></tr></table></figure>
+        <h1 id="现有vue项目与typescript结合"><a href="#现有vue项目与typescript结合" class="headerlink" title="现有vue项目与typescript结合"></a>现有vue项目与typescript结合</h1><h2 id="1-安装必要插件"><a href="#1-安装必要插件" class="headerlink" title="1.安装必要插件"></a>1.安装必要插件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">安装vue的官方插件</span><br><span class="line">npm i vue-class-component vue-property-decorator --save</span><br><span class="line"></span><br><span class="line">// ts-loader typescript 必须安装，其他的相信你以后也会装上的</span><br><span class="line">npm i ts-loader typescript tslint tslint-loader tslint-config-standard --save-dev</span><br></pre></td></tr></table></figure>
 
-<h3 id="ts中定义类"><a href="#ts中定义类" class="headerlink" title="ts中定义类"></a>ts中定义类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// ts中定义类</span><br><span class="line"></span><br><span class="line">class person &#123;</span><br><span class="line">    name:string; // 属性</span><br><span class="line">    age:number;</span><br><span class="line">    constructor(name:string,age:number) &#123;</span><br><span class="line">        this.name=name;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125; // 构造函数</span><br><span class="line">    say():void&#123;</span><br><span class="line">        console.log(&apos;say&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let a = new person(&apos;xxx&apos;,12);</span><br><span class="line">a.say();</span><br></pre></td></tr></table></figure>
+<p>这些库大体的作用，可以按需引入：</p>
+<ul>
+<li><a href="https://github.com/vuejs/vue-class-component" target="_blank" rel="noopener">vue-class-component</a>：强化 Vue 组件，使用 TypeScript/装饰器 增强 Vue 组件</li>
+<li><a href="https://github.com/kaorun343/vue-property-decorator" target="_blank" rel="noopener">vue-property-decorator</a>：在 <code>vue-class-component</code> 上增强更多的结合 Vue 特性的装饰器</li>
+<li><a href="https://github.com/TypeStrong/ts-loader" target="_blank" rel="noopener">ts-loader</a>：TypeScript 为 Webpack 提供了 <code>ts-loader</code>，其实就是为了让webpack识别 .ts .tsx文件</li>
+<li><a href="https://github.com/wbuchwalter/tslint-loader" target="_blank" rel="noopener">tslint-loader</a>跟<a href="https://github.com/palantir/tslint" target="_blank" rel="noopener">tslint</a>：我想你也会在<code>.ts</code> <code>.tsx</code>文件 约束代码格式（作用等同于eslint）</li>
+<li><a href="https://github.com/blakeembrey/tslint-config-standard" target="_blank" rel="noopener">tslint-config-standard</a>：<code>tslint</code> 配置 <code>standard</code>风格的约束</li>
+</ul>
+<h2 id="2-配置webpack"><a href="#2-配置webpack" class="headerlink" title="2.配置webpack"></a>2.配置webpack</h2><p> 首先找到<code>./build/webpack.base.conf.js</code> </p>
+<ul>
+<li>找到<code>entry.app</code> 将<code>main.js</code> 改成 <code>main.ts</code>, 顺便把项目文件中的<code>main.js</code>也改成<code>main.ts</code>, 里面内容保持不变</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">entry: &#123;</span><br><span class="line">  app: &apos;./src/main.ts&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="ts实现继承"><a href="#ts实现继承" class="headerlink" title="ts实现继承"></a>ts实现继承</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ts中实现继承</span></span><br><span class="line"><span class="keyword">class</span> person &#123;</span><br><span class="line">    name:<span class="built_in">string</span>; <span class="comment">// 属性</span></span><br><span class="line">    age:<span class="built_in">number</span>;</span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">name:<span class="built_in">string</span>,age:<span class="built_in">number</span></span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.name=name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125; <span class="comment">// 构造函数</span></span><br><span class="line">    say():<span class="built_in">void</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'say'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> person(<span class="string">'xxx'</span>,<span class="number">23</span>);</span><br><span class="line">a.say();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 继承使用extends,super关键字</span></span><br><span class="line"><span class="keyword">class</span> web <span class="keyword">extends</span> person &#123;</span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">name:<span class="built_in">string</span>,age:<span class="built_in">number</span></span>) &#123;</span><br><span class="line">        <span class="keyword">super</span>(name,age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> web(<span class="string">'xxx'</span>,<span class="number">24</span>);</span><br><span class="line">b.say();</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>在resolve中extensions加入ts后缀</p>
+</li>
+<li><p>设置module.rules对ts的解析</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  test: <span class="regexp">/\.ts$/</span>,</span><br><span class="line">  exclude: <span class="regexp">/node_modules/</span>,</span><br><span class="line">  enforce: <span class="string">'pre'</span>,</span><br><span class="line">  loader: <span class="string">'tslint-loader'</span></span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">  test: <span class="regexp">/\.tsx?$/</span>,</span><br><span class="line">  loader: <span class="string">'ts-loader'</span>,</span><br><span class="line">  exclude: <span class="regexp">/node_modules/</span>,</span><br><span class="line">  options: &#123;</span><br><span class="line">    appendTsSuffixTo: [<span class="regexp">/\.vue$/</span>],</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在项目的根目录启用命令</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tsc --init</span><br></pre></td></tr></table></figure>
 
-<p>父类子类有同样的方法的时候,优先使用子类的方法</p>
-<h3 id="ts中的类的修饰符"><a href="#ts中的类的修饰符" class="headerlink" title="ts中的类的修饰符"></a>ts中的类的修饰符</h3><p>public:公有的类,在类,子类类外面都可以访问</p>
-<p>protected:保护类型,子类中可以访问外面不可以访问</p>
-<p>private:私有类型 在子类的和外面都不可以访问</p>
+<p>创建tsconfig.json文件</p>
+<p>此处贴一份大佬的配置</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"include"</span>: [</span><br><span class="line">    <span class="string">"src/**/*"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"exclude"</span>: [</span><br><span class="line">    <span class="string">"node_modules"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="attr">"allowSyntheticDefaultImports"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"experimentalDecorators"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"allowJs"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"module"</span>: <span class="string">"esnext"</span>,</span><br><span class="line">    <span class="attr">"target"</span>: <span class="string">"es5"</span>,</span><br><span class="line">    <span class="attr">"moduleResolution"</span>: <span class="string">"node"</span>,</span><br><span class="line">    <span class="attr">"isolatedModules"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"lib"</span>: [</span><br><span class="line">      <span class="string">"dom"</span>,</span><br><span class="line">      <span class="string">"es5"</span>,</span><br><span class="line">      <span class="string">"es2015.promise"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"sourceMap"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"pretty"</span>: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>添加 tslint.json</p>
+<p>在项目路径创建<code>tslint.json</code></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"extends"</span>: <span class="string">"tslint-config-standard"</span>,</span><br><span class="line">  <span class="attr">"globals"</span>: &#123;</span><br><span class="line">    <span class="attr">"require"</span>: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>让ts识别vue</p>
+<p>在src目录下面创建<code>vue-shim.d.ts</code></p>
+<p>在ts中写入代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">declare module &quot;*.vue&quot; &#123;</span><br><span class="line">    import Vue from &quot;vue&quot;;</span><br><span class="line">    export default Vue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h2 id="3-修改app-vue"><a href="#3-修改app-vue" class="headerlink" title="3.修改app.vue"></a>3.修改app.vue</h2><p>我们使用引入的vue-class-component来修改app.vue</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;router-view /&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script lang=&quot;ts&quot;&gt;</span><br><span class="line">import Vue from &quot;vue&quot;;</span><br><span class="line">import Component from &quot;vue-class-component&quot;;</span><br><span class="line">@Component</span><br><span class="line">export default class app extends Vue &#123;</span><br><span class="line">  // 初始化数据</span><br><span class="line">  msg: number = 111;</span><br><span class="line">  // 生命周期函数</span><br><span class="line">  created() &#123;</span><br><span class="line">    this.getmsg();</span><br><span class="line">  &#125;</span><br><span class="line">  // computer 方法</span><br><span class="line">  get computedmsg(): number &#123;</span><br><span class="line">    return this.msg;</span><br><span class="line">  &#125;</span><br><span class="line">  // methods方法</span><br><span class="line">  getmsg(): void &#123;</span><br><span class="line">    console.log(&quot;得到了msg&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>最后,放一张目前自己写的项目改造截图</p>
+<p><img src="http://ww1.sinaimg.cn/large/c596f419ly1g8hnwvtltrj20ma0qumz8.jpg" alt="微信截图_20191031203700.png"></p>
+<p>最后提交当前代码~ts起手式完毕!</p>
 
       
     </div>
@@ -552,7 +592,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://abc.zhaoloveping.top/2019/10/20/typescript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%BA%8C/" title="typescript学习笔记(二)">http:&#x2F;&#x2F;abc.zhaoloveping.top&#x2F;2019&#x2F;10&#x2F;20&#x2F;typescript学习笔记-二&#x2F;</a>
+    <a href="http://abc.zhaoloveping.top/2019/10/31/vue-ts%E8%B5%B7%E6%89%8B%E5%BC%8F/" title="vue+ts起手式">http:&#x2F;&#x2F;abc.zhaoloveping.top&#x2F;2019&#x2F;10&#x2F;31&#x2F;vue-ts起手式&#x2F;</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-Hans" rel="noopener" target="_blank">&lt;i class=&quot;fa fa-fw fa-creative-commons&quot;&gt;&lt;&#x2F;i&gt;BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -572,8 +612,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/16/typescript学习笔记-一/" rel="next" title="typescript学习笔记(一)">
-                <i class="fa fa-chevron-left"></i> typescript学习笔记(一)
+              <a href="/2019/10/30/VUE依赖库大全/" rel="next" title="VUE组件库大全(转)">
+                <i class="fa fa-chevron-left"></i> VUE组件库大全(转)
               </a>
             
           </div>
@@ -581,10 +621,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/22/如何离线安装npm依赖包/" rel="prev" title="如何离线安装npm依赖包">
-                如何离线安装npm依赖包 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -774,7 +810,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#typescript学习-二"><span class="nav-number">1.</span> <span class="nav-text">typescript学习(二)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-类"><span class="nav-number">1.1.</span> <span class="nav-text">1.类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ts中定义类"><span class="nav-number">1.1.1.</span> <span class="nav-text">ts中定义类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ts实现继承"><span class="nav-number">1.1.2.</span> <span class="nav-text">ts实现继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ts中的类的修饰符"><span class="nav-number">1.1.3.</span> <span class="nav-text">ts中的类的修饰符</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#现有vue项目与typescript结合"><span class="nav-number">1.</span> <span class="nav-text">现有vue项目与typescript结合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装必要插件"><span class="nav-number">1.1.</span> <span class="nav-text">1.安装必要插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-配置webpack"><span class="nav-number">1.2.</span> <span class="nav-text">2.配置webpack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-修改app-vue"><span class="nav-number">1.3.</span> <span class="nav-text">3.修改app.vue</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -984,7 +1020,7 @@
 
 <script>
   window.livereOptions = {
-    refer: '2019/10/20/typescript学习笔记-二/'
+    refer: '2019/10/31/vue-ts起手式/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
