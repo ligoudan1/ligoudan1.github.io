@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>web Worker</title>
+    <url>/2019/11/07/web-Worker/</url>
+    <content><![CDATA[<h1 id="web-Worker"><a href="#web-Worker" class="headerlink" title="web Worker"></a>web Worker</h1><h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Web Worker 的作用，就是为 JavaScript 创造多线程环境，允许主线程创建 Worker 线程，将一些任务分配给后者运行。在主线程运行的同时，Worker 线程在后台运行，两者互不干扰。等到 Worker 线程完成计算任务，再把结果返回给主线程。这样的好处是，一些计算密集型或高延迟的任务，被 Worker 线程负担了，主线程（通常负责 UI 交互）就会很流畅，不会被阻塞或拖慢。</span><br><span class="line">																												-阮一峰博客</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-注意点"><a href="#2-注意点" class="headerlink" title="2.注意点"></a>2.注意点</h2><p>需要注意的是</p>
+<p>worker线程一旦新建成功的话，主线程上面的活动，比如alert，点击操作，都不会打断worker线程的，这样有利于随时响应主线程的通信，但是，这也造成了worker比较耗费性能</p>
+<h3 id="需要注意点："><a href="#需要注意点：" class="headerlink" title="需要注意点："></a>需要注意点：</h3><h4 id="1-同源限制"><a href="#1-同源限制" class="headerlink" title="1.同源限制"></a>1.同源限制</h4><p>worker受浏览器的同源策略影响，worker线程运行的程序必须与主线程的js同源</p>
+<h4 id="2-DOM限制"><a href="#2-DOM限制" class="headerlink" title="2.DOM限制"></a>2.DOM限制</h4><p>worker所在的全局对象与主线程不一样，无法读取主线程所在网页的DOM元素，例如window，document</p>
+<h4 id="3-通信联系"><a href="#3-通信联系" class="headerlink" title="3.通信联系"></a>3.通信联系</h4><p>worker和主线程不在同一个上下文的环境中的话，它们不能直接通信</p>
+<h4 id="4-脚本限制"><a href="#4-脚本限制" class="headerlink" title="4.脚本限制"></a>4.脚本限制</h4><p>worker不能执行alert()和confirm()方法</p>
+<h4 id="5-文件限制"><a href="#5-文件限制" class="headerlink" title="5.文件限制"></a>5.文件限制</h4><p>worker不能读取本地文件</p>
+<h2 id="3-worker线程"><a href="#3-worker线程" class="headerlink" title="3.worker线程"></a>3.worker线程</h2><p>我们在worker线程中打印this对象</p>
+<p><img src="http://ww1.sinaimg.cn/large/c596f419ly1g8neu8ssquj20y40scai7.jpg" alt="WeChat0867843f5c87e1238bfccefc6fb980cf.png"></p>
+<p>我们得到了一个对象</p>
+<p>与主线程的window相同，在worker线程中得到的对象也有他的方法和属性，这时候我们就可以使用这个“this”对象来操作worker线程</p>
+<h3 id="接受传过来的参数"><a href="#接受传过来的参数" class="headerlink" title="接受传过来的参数"></a>接受传过来的参数</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 监听发过来的数据</span></span><br><span class="line">onmessage = <span class="function">(<span class="params">parms</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(parms);</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在worker线程中我们使用这样的方法来监听传过来的参数</p>
+<h3 id="发送参数"><a href="#发送参数" class="headerlink" title="发送参数"></a>发送参数</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 在worker中发送数据给主线程</span></span><br><span class="line">postMessage(<span class="string">'这是我给主线程发送的数据'</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="在worker线程中结束任务"><a href="#在worker线程中结束任务" class="headerlink" title="在worker线程中结束任务"></a>在worker线程中结束任务</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 在当前worker线程中立即结束任务</span></span><br><span class="line">close();</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-主线程"><a href="#4-主线程" class="headerlink" title="4.主线程"></a>4.主线程</h2><h3 id="1-创建worker线程"><a href="#1-创建worker线程" class="headerlink" title="1.创建worker线程"></a>1.创建worker线程</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> worker = <span class="keyword">new</span> Worker(<span class="string">"worker线程js文件路径"</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="接受传过来的参数-1"><a href="#接受传过来的参数-1" class="headerlink" title="接受传过来的参数"></a>接受传过来的参数</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 主线程通过worker.onmessage指定监听函数，接收子线程发回来的消息。</span></span><br><span class="line">worker.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(event.data);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="给worker线程发送参数"><a href="#给worker线程发送参数" class="headerlink" title="给worker线程发送参数"></a>给worker线程发送参数</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">worker.postMessage(<span class="keyword">this</span>.msg);</span><br></pre></td></tr></table></figure>
+
+<h3 id="在主线程结束worker线程"><a href="#在主线程结束worker线程" class="headerlink" title="在主线程结束worker线程"></a>在主线程结束worker线程</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 此刻立刻结束worker；</span></span><br><span class="line">worker.terminate();</span><br></pre></td></tr></table></figure>
+
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>此处提上vue代码</p>
+<h3 id="主线程-vue文件"><a href="#主线程-vue文件" class="headerlink" title="主线程(vue文件)"></a>主线程(vue文件)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;&#123;&#123;msg&#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script lang=&quot;ts&quot;&gt;</span><br><span class="line">import Vue from &quot;vue&quot;;</span><br><span class="line">import Component from &quot;vue-class-component&quot;;</span><br><span class="line">import &#123; log &#125; from &quot;util&quot;;</span><br><span class="line">@Component</span><br><span class="line">export default class workerTest extends Vue &#123;</span><br><span class="line">  msg: string = &quot;这个页面是用来测试worker的&quot;;</span><br><span class="line">  // created 生命周期函数</span><br><span class="line">  created() &#123;</span><br><span class="line">    console.log(&quot;created&quot;);</span><br><span class="line">    // 测试worker方法</span><br><span class="line">    var worker = new Worker(&quot;/static/worker/test.js&quot;);</span><br><span class="line">    console.log(&quot;执行了created方法&quot;);</span><br><span class="line">    // 主线程调用worker.postMessage()方法，向 Worker 发消息。</span><br><span class="line">    worker.postMessage(this.msg);</span><br><span class="line">    // 主线程通过worker.onmessage指定监听函数，接收子线程发回来的消息。</span><br><span class="line">    worker.onmessage = function(event) &#123;</span><br><span class="line">      console.log(event.data);</span><br><span class="line">    &#125;;</span><br><span class="line">    // 此刻立刻结束worker；</span><br><span class="line">    worker.terminate();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang=&quot;scss&quot;&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="worker线程（js文件）"><a href="#worker线程（js文件）" class="headerlink" title="worker线程（js文件）"></a>worker线程（js文件）</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 监听发过来的数据</span></span><br><span class="line">onmessage = <span class="function">(<span class="params">parms</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(parms.data);</span><br><span class="line">  <span class="comment">// 此时在worker线程中立即结束worker</span></span><br><span class="line">  close();</span><br><span class="line">  postMessage(<span class="string">'这是我给主线程发送的数据'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>worker线程总的来说就是使js从单线程变成了多线程，不过worker不能多开，会耗费电脑性能，多线程使js的处理变得更加效率化</p>
+]]></content>
+  </entry>
+  <entry>
     <title>vue+ts起手式</title>
     <url>/2019/10/31/vue-ts%E8%B5%B7%E6%89%8B%E5%BC%8F/</url>
     <content><![CDATA[<h1 id="现有vue项目与typescript结合"><a href="#现有vue项目与typescript结合" class="headerlink" title="现有vue项目与typescript结合"></a>现有vue项目与typescript结合</h1><h2 id="1-安装必要插件"><a href="#1-安装必要插件" class="headerlink" title="1.安装必要插件"></a>1.安装必要插件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">安装vue的官方插件</span><br><span class="line">npm i vue-class-component vue-property-decorator --save</span><br><span class="line"></span><br><span class="line">// ts-loader typescript 必须安装，其他的相信你以后也会装上的</span><br><span class="line">npm i ts-loader typescript tslint tslint-loader tslint-config-standard --save-dev</span><br></pre></td></tr></table></figure>
