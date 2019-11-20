@@ -1,6 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>koa框架入门（一）</title>
+    <url>/2019/11/20/koa%E6%A1%86%E6%9E%B6%E5%85%A5%E9%97%A8%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="koa框架入门（一）"><a href="#koa框架入门（一）" class="headerlink" title="koa框架入门（一）"></a>koa框架入门（一）</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>koa框架是node的一门框架，node是底层用c封装的，一门js语法的后端语言</p>
+<p>在koa框架问世之前，node的上一个好用的框架是express；</p>
+<p>这里贴上koa框架的官方网站 <a href>https://koa.bootcss.com/</a></p>
+<h2 id="起手式"><a href="#起手式" class="headerlink" title="起手式"></a>起手式</h2><p>首先在使用koa框架之前必须确保电脑上装有node，并可以使用node命令和npm命令</p>
+<p><img src="http://ww1.sinaimg.cn/large/c596f419ly1g94umdohadj20vo0ka42m.jpg" alt="WeChat2855a480fa0554af8faf06dd8159977d.png"></p>
+<p>在确保node和npm安装好之后我们开始创建属于自己的第一个koa框架demo吧</p>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>我们在桌面创建一个koa-app的项目</p>
+<p><img src="http://ww1.sinaimg.cn/large/c596f419ly1g94uo57htgj208q06ydi9.jpg" alt="WeChataf43625455aaef79980f993819a35242.png"></p>
+<p>创建后之后进入项目，先初始化一个pack.json的包</p>
+<p>使用命令</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">npm init --yes</span><br></pre></td></tr></table></figure>
+
+<p>然后在项目中安装koa和koa-router；</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">cnpm install koa koa-router --save</span><br></pre></td></tr></table></figure>
+
+<p>安装好之后我们在package.json中修改我们的入口文件</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="string">"main"</span>: <span class="string">"app.js"</span></span><br></pre></td></tr></table></figure>
+
+<p>然后我们在项目中创建app.js</p>
+<h2 id="第一个koa服务"><a href="#第一个koa服务" class="headerlink" title="第一个koa服务"></a>第一个koa服务</h2><p>接下来让我们来创建第一个koa服务吧</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 引入koa 和koa-router</span></span><br><span class="line"><span class="keyword">const</span> koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</span><br><span class="line"><span class="keyword">const</span> router = <span class="built_in">require</span>(<span class="string">'koa-router'</span>)(); <span class="comment">// 引入koa-router并将其实例化</span></span><br></pre></td></tr></table></figure>
+
+<p>首先我们引入koa和koa-router；</p>
+<p>注意：我在这里引入koa-router以后后面带了个（）；是直接将其实例化</p>
+<p>不需要在下面在写</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">app.use(router);</span><br></pre></td></tr></table></figure>
+
+<p>写完之后我们实例化koa,并使其监听8080端口</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//实例化koa</span></span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> koa();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 监听端口</span></span><br><span class="line">app.listen(<span class="number">8080</span>);</span><br></pre></td></tr></table></figure>
+
+<p>我们需要注册router</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">app.use(router.routes());</span><br></pre></td></tr></table></figure>
+
+<p>注册完整代码</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 引入koa 和koa-router</span></span><br><span class="line"><span class="keyword">const</span> koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</span><br><span class="line"><span class="keyword">const</span> router = <span class="built_in">require</span>(<span class="string">'koa-router'</span>)(); <span class="comment">// 引入koa-router并将其实例化</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//实例化koa</span></span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> koa();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app.use(router.routes());</span><br><span class="line"><span class="comment">// 监听端口</span></span><br><span class="line">app.listen(<span class="number">8080</span>);</span><br></pre></td></tr></table></figure>
+
+<p>这样之后运行</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">node app.js</span><br></pre></td></tr></table></figure>
+
+<p>我们即可在localhost:8080中访问到app.js中的内容</p>
+<h2 id="koa监听get传参"><a href="#koa监听get传参" class="headerlink" title="koa监听get传参"></a>koa监听get传参</h2><p>get传参分为两种，一种url拼接传参，一种动态传参，我们先说第一种</p>
+<h3 id="url拼接传参"><a href="#url拼接传参" class="headerlink" title="url拼接传参"></a>url拼接传参</h3><p>url拼接传参是指这样</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">localhost:8080/test?a=111</span><br></pre></td></tr></table></figure>
+
+<p>我们怎么获取到a呢？</p>
+<p>首先先创建一个get</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">router.get(<span class="string">'/'</span>, <span class="keyword">async</span> (ctx) =&gt; &#123;</span><br><span class="line">    ctx.body = <span class="string">"test"</span>;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>ctx是指conterntext的缩写，async是es7中的新特性，将函数转换为promise对象</p>
+<p>ctx.body是在网页上展示的内容</p>
+<p>监听url传参</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 监听get传参</span></span><br><span class="line">router.get(<span class="string">'/test'</span>, <span class="keyword">async</span> (ctx) =&gt; &#123;</span><br><span class="line">    ctx.body = <span class="string">'test2'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(ctx.query);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>获取到的ctx.query为参数对象</p>
+<p>例如</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123; <span class="attr">a</span>: <span class="string">'11'</span> &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h3><p>动态路由是指这种路由</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">localhost:8080/test/xxx</span><br></pre></td></tr></table></figure>
+
+<p>xxx是指动态路由</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 监听动态路由传参</span></span><br><span class="line">router.get(<span class="string">'/test3/:id'</span>,<span class="keyword">async</span> (ctx)=&gt;&#123;</span><br><span class="line">    ctx.body = <span class="string">"test3"</span>; </span><br><span class="line">    <span class="built_in">console</span>.log(ctx.params);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>ctx.params即为获取到的动态路由的对象</p>
+<p>例如</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123; <span class="attr">id</span>: <span class="string">'xxx'</span> &#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
     <title>web Worker</title>
     <url>/2019/11/07/web-Worker/</url>
     <content><![CDATA[<h1 id="web-Worker"><a href="#web-Worker" class="headerlink" title="web Worker"></a>web Worker</h1><h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Web Worker 的作用，就是为 JavaScript 创造多线程环境，允许主线程创建 Worker 线程，将一些任务分配给后者运行。在主线程运行的同时，Worker 线程在后台运行，两者互不干扰。等到 Worker 线程完成计算任务，再把结果返回给主线程。这样的好处是，一些计算密集型或高延迟的任务，被 Worker 线程负担了，主线程（通常负责 UI 交互）就会很流畅，不会被阻塞或拖慢。</span><br><span class="line">																												-阮一峰博客</span><br></pre></td></tr></table></figure>
