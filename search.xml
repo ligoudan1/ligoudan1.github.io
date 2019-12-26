@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>async，settimeout，promise竞速？谁快谁慢？</title>
+    <url>/2019/12/26/async%EF%BC%8Csettimeout%EF%BC%8Cpromise%E7%AB%9E%E9%80%9F%EF%BC%9F%E8%B0%81%E5%BF%AB%E8%B0%81%E6%85%A2%EF%BC%9F/</url>
+    <content><![CDATA[<h1 id="async，settimeout，promise竞速？谁快谁慢？"><a href="#async，settimeout，promise竞速？谁快谁慢？" class="headerlink" title="async，settimeout，promise竞速？谁快谁慢？"></a>async，settimeout，promise竞速？谁快谁慢？</h1><h2 id="灵感来源"><a href="#灵感来源" class="headerlink" title="灵感来源"></a>灵感来源</h2><p>今天同事问了我一个问题，如何解决异步处理，我给他抛出了ES6种的promise，然而promise并不能解决他的问题，然后我给他指出ES7中的async，await，于是乎他在函数中使用了async，然而他的函数中有封装的axios方法，有<code>.then()</code>返回值，代码大概是这样的</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> test()&#123;</span><br><span class="line">  <span class="keyword">this</span>.$http(&#123;</span><br><span class="line">    url:...,</span><br><span class="line">    ...</span><br><span class="line">  &#125;).then(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">await</span> <span class="built_in">console</span>.log(<span class="string">'test'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>于是乎引起了我的注意，决定探讨一下三大异步马车谁快谁慢</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>首先在js中声明一个时间节点</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.time(<span class="string">'start'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'start-----'</span>);</span><br></pre></td></tr></table></figure>
+
+<p>这样代表项目开始</p>
+<p>然后在开始之后使用async函数，并使其自执行</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">(<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'async----start'</span>);</span><br><span class="line">    <span class="keyword">await</span> <span class="built_in">console</span>.log(<span class="string">'async----end'</span>);</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是，async需要写在自执行函数的括号里面，否则js会认定你async并不是这个函数，而是这个函数的返回值</p>
+<p>错误写法：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> (<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'async----start'</span>);</span><br><span class="line">    <span class="keyword">await</span> <span class="built_in">console</span>.log(<span class="string">'async----end'</span>);</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+<p>然后让咱们es6中的pormise登场</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'promise-----start'</span>);</span><br><span class="line">    resolve();</span><br><span class="line">&#125;).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'promise-----end'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>这里也让其直接执行</p>
+<p>然后加上<code>setTimeout</code>并使其延时0ms执行</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'settimeout'</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
+<p>最后结束输出时间和end</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'end-----'</span>);</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'start'</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><p>完整代码如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.time(<span class="string">'start'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'start-----'</span>);</span><br><span class="line">(<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'async----start'</span>);</span><br><span class="line">    <span class="keyword">await</span> <span class="built_in">console</span>.log(<span class="string">'async----end'</span>);</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'promise-----start'</span>);</span><br><span class="line">    resolve();</span><br><span class="line">&#125;).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'promise-----end'</span>);</span><br><span class="line">&#125;)</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'settimeout'</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'end-----'</span>);</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'start'</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><p>我们在vscode运行的结果如下</p>
+<p><img src="http://ww1.sinaimg.cn/large/c596f419ly1gaah5ufn7cj21kw16o133.jpg" alt="WeChat53819801bdabe859f8897dd58f4162c8.png"></p>
+<p>start—–</p>
+<p>async—-start</p>
+<p>async—-end</p>
+<p>promise—–start</p>
+<p>end—–</p>
+<p>start: 14.156005859375ms</p>
+<p>start: 14.248ms</p>
+<p>promise—–end</p>
+<p>settimeout</p>
+<p>由上面顺序可知，我们的竞速结果如下</p>
+<p>async–&gt;promise–&gt;settimeout</p>
+<h2 id="分析结果"><a href="#分析结果" class="headerlink" title="分析结果"></a>分析结果</h2><p>由于settimeout是整个js的运行流程分开的，排在最后也是必然的</p>
+<p>至于async其实本身作为一个被声明的异步函数，在创建时，运行完函数内部同步方法后再运行await也是合情合理</p>
+]]></content>
+  </entry>
+  <entry>
     <title>如何用小技巧提高前端开发效率？</title>
     <url>/2019/12/25/%E5%A6%82%E4%BD%95%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7%E6%8F%90%E9%AB%98%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E6%95%88%E7%8E%87%EF%BC%9F/</url>
     <content><![CDATA[<h1 id="如何用小技巧提高前端开发效率？"><a href="#如何用小技巧提高前端开发效率？" class="headerlink" title="如何用小技巧提高前端开发效率？"></a>如何用小技巧提高前端开发效率？</h1><h2 id="1-确定对象是否含有此属性"><a href="#1-确定对象是否含有此属性" class="headerlink" title="1.确定对象是否含有此属性"></a>1.确定对象是否含有此属性</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 判断对象是否含有此属性</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 这里声明一个对象</span></span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="number">2</span>,</span><br><span class="line">    c: <span class="number">3</span>,</span><br><span class="line">    d: <span class="literal">undefined</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 使.或者[]语法来获取当前对象下存储的对象，如果当前对象不存在，则返回undefined，如果当前对象定义为undefined，则也返回undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.d); <span class="comment">// undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.e); <span class="comment">// undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(obj[<span class="string">'d'</span>]); <span class="comment">// undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(obj[<span class="string">'e'</span>]); <span class="comment">// undefined</span></span><br><span class="line"><span class="comment">// 使用in语法来获取当前对象下是否存有此对象，如果有则返回true，缺点，会将原型链上面的对象返回为true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a'</span> <span class="keyword">in</span> obj); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'toString'</span> <span class="keyword">in</span> obj); <span class="comment">// 原型链上面的对象，ture</span></span><br><span class="line"><span class="comment">// object.hasOwnProperty() 属性，不能读取原型链上面的属性和方法</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.hasOwnProperty(<span class="string">'a'</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.hasOwnProperty(d)); <span class="comment">// d is not defined 报错，需使用字符串型</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.hasOwnProperty(toString)); <span class="comment">// false 不能读取原型链上面的属性和方法</span></span><br></pre></td></tr></table></figure>
