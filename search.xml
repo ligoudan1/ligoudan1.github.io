@@ -1,6 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>优雅的使用vue的复用组件</title>
+    <url>/2020/03/30/%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8vue%E7%9A%84%E5%A4%8D%E7%94%A8%E7%BB%84%E4%BB%B6/</url>
+    <content><![CDATA[<h1 id="如何在vue中优雅的复用组件？"><a href="#如何在vue中优雅的复用组件？" class="headerlink" title="如何在vue中优雅的复用组件？"></a>如何在vue中优雅的复用组件？</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>此次记录的内容，标题已经很明确了，平常我们在工作中，使用vue绝大多数是写一个组件，然后其他地方需要调用的时候，使用</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> HelloWorld <span class="keyword">from</span> <span class="string">'../HelloWorld'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    components:&#123;</span><br><span class="line">        HelloWorld</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这种方式比较多一点，但是组件又是可服用的，当一个高频组件需要调用很多次的时候，这样无异于增加了代码量，所以，需要一种更优雅的方式来引用高频组件。</p>
+<h2 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h2><p>这次我们需要实现不用在单个页面中写入<code>importxxfromxx</code>就可以引入其组件，原理是使用了webpack的api，</p>
+<p><code>require.context</code>,这个api会将指定目录下的指定文件查询出来并返回。</p>
+<h3 id="确定组件格式"><a href="#确定组件格式" class="headerlink" title="确定组件格式"></a>确定组件格式</h3><p>首先我们规定组件格式为首字母大写。例如child1.vue组件为<code>&lt;Child1&gt;&lt;/child1&gt;</code>引入后为这样。</p>
+<p>所以我们需要定义一个转换首字符大写的函数</p>
+<p>函数如下</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 首字符大写</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeStr</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str.charAt(<span class="number">0</span>).toUpperCase()+str.slice(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>经过这层函数的包装，我们即可返回首字符为大写的字符串</p>
+<p>所以，我们开始进行全局方法的包装</p>
+<h3 id="全局方法"><a href="#全局方法" class="headerlink" title="全局方法"></a>全局方法</h3><p>首先我们把所有的高频组件放在同一个文件夹下</p>
+<p>例如</p>
+<p><code>src&gt;components&gt;component</code></p>
+<p>这里我们声明一个测试组件<code>child1.vue</code></p>
+<p>组件内容如下</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;button&gt;测试<span class="number">1</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp">    name:'Child1'</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang=<span class="string">"scss"</span>&gt;</span><br><span class="line">    </span><br><span class="line">&lt;<span class="regexp">/style&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这时我们在同级目录下创建文件index.js</p>
+<p>并在main.js中引用并use。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> index <span class="keyword">from</span> <span class="string">'./components/component/index.js'</span>;</span><br><span class="line">Vue.use(index);</span><br></pre></td></tr></table></figure>
+
+<p>注意是在main.js中引用并注册</p>
+<p>然后在index.js中我们首先通过webpack的api获取所有的组件</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> requireComponent = <span class="built_in">require</span>.context(<span class="string">'./'</span>, <span class="literal">true</span>, /\.vue$/);</span><br></pre></td></tr></table></figure>
+
+<p>传入参数为三个，第一个为目录，第二个为是否深层次查找，第三匹配格式。</p>
+<p>然后我们拿到找的的所有的keys</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(requireComponent.keys());</span><br><span class="line"></span><br><span class="line"><span class="comment">// ["./child1.vue", "./child2.vue"]</span></span><br></pre></td></tr></table></figure>
+
+<p>然后对拿到的组件进行遍历</p>
+<p>并拿到第i个组件，格式化组件名，并注册组件</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">requireComponent.keys().forEach(<span class="function"><span class="params">fileName</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 拿到所有的组件进行遍历</span></span><br><span class="line">    <span class="keyword">let</span> config = requireComponent(fileName);</span><br><span class="line">    <span class="built_in">console</span>.log(config);</span><br><span class="line">    <span class="comment">// 获得第i个组件 Module &#123;default: &#123;…&#125;, __esModule: true, Symbol(Symbol.toStringTag): "Module"&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 格式化组件名</span></span><br><span class="line">    <span class="keyword">let</span> componentName = changeStr(fileName.replace(<span class="regexp">/^\.\//</span>, <span class="string">""</span>).replace(<span class="regexp">/\.\w+$/</span>, <span class="string">""</span>))</span><br><span class="line">    Vue.component(componentName, config.default || config);</span><br></pre></td></tr></table></figure>
+
+<p>这样就实现了全局自动化注册组件。</p>
+<p>这是因为我们在main.js中使用了use方法，则需要在index.js中暴露一个install方法</p>
+<p>则</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> install = <span class="function">(<span class="params">Vue</span>) =&gt;</span> &#123;</span><br><span class="line">    requireComponent.keys().forEach(<span class="function"><span class="params">fileName</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 拿到所有的组件进行遍历</span></span><br><span class="line">        <span class="keyword">let</span> config = requireComponent(fileName);</span><br><span class="line">        <span class="built_in">console</span>.log(config);</span><br><span class="line">        <span class="comment">// 获得第i个组件 Module &#123;default: &#123;…&#125;, __esModule: true, Symbol(Symbol.toStringTag): "Module"&#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 格式化组件名</span></span><br><span class="line">        <span class="keyword">let</span> componentName = changeStr(fileName.replace(<span class="regexp">/^\.\//</span>, <span class="string">""</span>).replace(<span class="regexp">/\.\w+$/</span>, <span class="string">""</span>))</span><br><span class="line">        Vue.component(componentName, config.default || config);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    install</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样我们的优雅引入复用组件就完成了</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>我们在vuecli的About.vue页面中引入child1试试</p>
+<p>About.vue页面代码如下，并没用script。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;about&quot;&gt;</span><br><span class="line">    &lt;h1&gt;This is an about page&lt;/h1&gt;</span><br><span class="line">    &lt;Child1&gt;&lt;/Child1&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>实际效果</p>
+<p><img src="http://ww1.sinaimg.cn/large/c596f419ly1gdc4r0uzw6j20rs0gy3z3.jpg" alt="WeChatd36bb015d6368b1669e3ceb767db819f.png"></p>
+<p>这里的测试1按钮就是我们的child1组件。</p>
+<p>项目地址</p>
+<p><a href="https://github.com/ligoudan1/elegant-components" target="_blank" rel="noopener">github地址</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>手把手教你实现一个vue2.x的数据劫持</title>
     <url>/2020/02/08/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AAvue2-x%E7%9A%84%E6%95%B0%E6%8D%AE%E5%8A%AB%E6%8C%81/</url>
     <content><![CDATA[<h1 id="手把手教你实现一个vue2-x的数据劫持"><a href="#手把手教你实现一个vue2-x的数据劫持" class="headerlink" title="手把手教你实现一个vue2.x的数据劫持"></a>手把手教你实现一个vue2.x的数据劫持</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>此次vue2.x的数据劫持实现是基于vue版本<code>vue2.x</code>，灵感来自于阅读源码中产生的种种好奇，就心想自己能不能将整体串起来实现一个简易的vue2.x的数据劫持呢，话不多说，开干</p>
